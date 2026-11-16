@@ -14,6 +14,7 @@ import {
 	SaveGame,
 	ProfileDir,
 	ExperienceSkillsTypes,
+	BusExperienceSkillsTypes,
 } from "@/types/SaveGameTypes";
 import {
 	responseRustTypes,
@@ -464,6 +465,23 @@ export const setProfileSkill = async (
 
 	const invoceRes = (await invoke(
 		"set_profile_experience_skills",
+		rustParams
+	)) as responseRustTypes;
+
+	return invoceRes.res;
+};
+
+export const setProfileBusSkills = async (
+	dirSave: string,
+	busSkills: BusExperienceSkillsTypes
+): Promise<boolean> => {
+	const rustParams = {
+		dirSave: dirSave + "/game.sii",
+		...busSkills,
+	};
+
+	const invoceRes = (await invoke(
+		"set_profile_bus_experience_skills",
 		rustParams
 	)) as responseRustTypes;
 

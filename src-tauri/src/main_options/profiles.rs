@@ -1,5 +1,6 @@
 use crate::main_options::trucks::get_truck_id;
 use crate::main_options::vehicles_player::get_player_vehicles_data_have_same_vehicle_id;
+use crate::structs::bus_experience_skills::BusExperienceSkills;
 use crate::structs::experience_skills::ExperienceSkills;
 use crate::structs::vec_items_find::VecItemsFind;
 use crate::structs::vec_items_replace::{VecGaragesReplace, VecItemsReplace};
@@ -624,6 +625,108 @@ pub fn set_experience_skills(
     }
 
     return Some(arr_val_clone);
+}
+
+/// Bus skills added in ETS2 1.62 (max_rank 3 each in def/skills.sii).
+pub const BUS_SKILL_MAX_RANK: u8 = 3;
+
+/// Writes bus experience and the six bus skills, which live in the `economy` unit of
+/// game.sii. Returns `None` when the save predates buses (fields missing).
+pub fn set_bus_experience_skills(
+    arr_val: &Vec<String>,
+    bus: &BusExperienceSkills,
+) -> Option<Vec<String>> {
+    let mut arr_val_clone = arr_val.clone();
+
+    let economy_start = arr_val.iter().position(|line| line.starts_with("economy :"))?;
+
+    let fields: [(&str, String); 7] = [
+        ("bus_experience_points", bus.experience.to_string()),
+        ("long_duty", bus.long_duty.to_string()),
+        ("tight_schedule", bus.tight_schedule.to_string()),
+        ("satisfaction_decrease", bus.satisfaction_decrease.to_string()),
+        ("low_acceleration", bus.low_acceleration.to_string()),
+        ("satisfaction_increase", bus.satisfaction_increase.to_string()),
+        ("ecodriving", bus.ecodriving.to_string()),
+    ];
+    let mut found = [false; 7];
+
+    for (i, item) in arr_val.iter().enumerate().skip(economy_start + 1) {
+        if item.trim() == "}" {
+            break;
+        }
+
+        let key = match item.split_once(':') {
+            Some((key, _)) => key.trim(),
+            None => continue,
+        };
+
+        if let Some(index) = fields.iter().position(|(name, _)| *name == key) {
+            arr_val_clone[i] = format!(" {}: {}", key, fields[index].1);
+            found[index] = true;
+        }
+    }
+
+    if found.iter().any(|f| !f) {
+        return None;
+    }
+
+    // The game keeps the bus skills screen locked until the first bus level is earned
+    // in play; earning it removes this entry from the locked-screens list.
+    remove_locked_screen(&mut arr_val_clone, economy_start, BUS_SKILLS_SCREEN);
+
+    return Some(arr_val_clone);
+}
+
+const BUS_SKILLS_SCREEN: &str = "\"screen.bus.skills\"";
+
+/// `screen_access_list` in the `economy` unit lists the screens that are still locked.
+/// Removes `screen` from it, renumbering the remaining entries and updating the count.
+fn remove_locked_screen(arr_val: &mut Vec<String>, economy_start: usize, screen: &str) {
+    let mut entries: Vec<String> = Vec::new();
+    let mut count_index: Option<usize> = None;
+    let mut first_entry: Option<usize> = None;
+    let mut last_entry: usize = 0;
+
+    for (i, item) in arr_val.iter().enumerate().skip(economy_start + 1) {
+        if item.trim() == "}" {
+            break;
+        }
+
+        let (key, value) = match item.split_once(':') {
+            Some((key, value)) => (key.trim(), value.trim()),
+            None => continue,
+        };
+
+        if key == "screen_access_list" {
+            count_index = Some(i);
+        } else if key.starts_with("screen_access_list[") {
+            first_entry.get_or_insert(i);
+            last_entry = i;
+            entries.push(value.to_string());
+        } else if first_entry.is_some() {
+            break;
+        }
+    }
+
+    let (count_index, first_entry) = match (count_index, first_entry) {
+        (Some(count_index), Some(first_entry)) => (count_index, first_entry),
+        _ => return,
+    };
+
+    if !entries.iter().any(|entry| entry == screen) {
+        return;
+    }
+
+    let remaining: Vec<String> = entries.into_iter().filter(|entry| entry != screen).collect();
+    let new_lines: Vec<String> = remaining
+        .iter()
+        .enumerate()
+        .map(|(i, entry)| format!(" screen_access_list[{}]: {}", i, entry))
+        .collect();
+
+    arr_val[count_index] = format!(" screen_access_list: {}", remaining.len());
+    arr_val.splice(first_entry..=last_entry, new_lines);
 }
 
 pub async fn copy_profile_configs(dir_profile: &Path, dest_dir_profile: &Path) -> bool {

@@ -45,6 +45,16 @@ export interface ExperienceSkillsTypes {
 	mechanical: string;
 }
 
+export interface BusExperienceSkillsTypes {
+	experience: number;
+	longDuty: number;
+	tightSchedule: number;
+	satisfactionDecrease: number;
+	lowAcceleration: number;
+	satisfactionIncrease: number;
+	ecodriving: number;
+}
+
 /////////////////////////////////////////////////////////
 // TRUCKS TYPES
 

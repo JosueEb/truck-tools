@@ -258,6 +258,28 @@
 					"title": "Change money"
 				}
 			},
+			"bus_skills": {
+				"description_card": "Change bus experience and skills (ETS2 1.62+)",
+				"label_card": "Bus experience and skills",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_max": "Max all",
+					"btn_open": "Open",
+					"description": "Set the bus experience and the rank of each bus skill (max 3). Requires a save from ETS2 1.62 or newer.",
+					"ecodriving": "Ecodriving",
+					"input_experience": {
+						"label": "Bus experience",
+						"placeholder": "Enter the amount of bus experience in numbers"
+					},
+					"long_duty": "Longer Duties",
+					"low_acceleration": "Cushioned Journey",
+					"satisfaction_decrease": "Premium Service",
+					"satisfaction_increase": "Passenger Favourite",
+					"tight_schedule": "Demanding Timetables",
+					"title": "Bus experience and skills"
+				}
+			},
 			"dealer_visited": {
 				"description_card": "Set all dealer status to your profile",
 				"label_card": "Discover all dealers",

@@ -303,11 +303,34 @@ export interface About {
 export interface Profile {
 	add_experience: AddExperience;
 	add_money: AddMoney;
+	bus_skills: BusSkills;
 	dealer_visited: DealerVisited;
 	garage_status: GarageStatus;
 	skills_points: SkillsPoints;
 	tab_title: string;
 	visited_cities: VisitedCities;
+}
+
+export interface BusSkills {
+	description_card: string;
+	label_card: string;
+	modal: BusSkillsModal;
+}
+
+export interface BusSkillsModal {
+	btn_apply: string;
+	btn_close: string;
+	btn_max: string;
+	btn_open: string;
+	description: string;
+	ecodriving: string;
+	input_experience: Input;
+	long_duty: string;
+	low_acceleration: string;
+	satisfaction_decrease: string;
+	satisfaction_increase: string;
+	tight_schedule: string;
+	title: string;
 }
 
 export interface AddExperience {

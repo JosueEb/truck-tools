@@ -10,6 +10,7 @@ import SetGarageStatus from "@/routes/pages/ProfilesOptions/Modal/SetGarageStatu
 import SetAllCitiesStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllCitiesStatus";
 import SetAllDealerStatus from "@/routes/pages/ProfilesOptions/Modal/SetAllDealerStatus";
 import SetExperienceSkills from "@/routes/pages/ProfilesOptions/Modal/SetExperienceSkills";
+import SetBusSkills from "@/routes/pages/ProfilesOptions/Modal/SetBusSkills";
 
 // Hooks
 import { ProfileContex } from "@/hooks/useProfileContex";
@@ -76,6 +77,18 @@ const ProfilesOptions = () => {
 			image: img16,
 			modal: <SetExperienceSkills />,
 		},
+		// Buses were added to ETS2 in 1.62; ATS saves have no bus fields
+		...(game === "ets2"
+			? [
+					{
+						id: "7",
+						title: profile.bus_skills.label_card,
+						description: profile.bus_skills.description_card,
+						image: img12,
+						modal: <SetBusSkills />,
+					},
+				]
+			: []),
 	];
 
 	return (

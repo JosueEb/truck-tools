@@ -16,7 +16,9 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
 		`@/translations/${lang}.json`
 	)) as TranslationsTypes;
 
-	if (res_lags.menu_options.routes) return res_lags;
+	// New sections fall back to English until they are translated in Weblate
+	if (res_lags.menu_options.routes && res_lags.menu_options.profile.bus_skills)
+		return res_lags;
 
 	const english =
 		(await import("@/translations/en-US.json")) as TranslationsTypes;
@@ -25,7 +27,13 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
 		...res_lags,
 		menu_options: {
 			...res_lags.menu_options,
-			routes: english.menu_options.routes,
+			routes: res_lags.menu_options.routes ?? english.menu_options.routes,
+			profile: {
+				...res_lags.menu_options.profile,
+				bus_skills:
+					res_lags.menu_options.profile.bus_skills ??
+					english.menu_options.profile.bus_skills,
+			},
 		},
 	};
 };

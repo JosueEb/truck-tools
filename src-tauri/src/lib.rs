@@ -5,8 +5,8 @@ mod utils;
 use hex::encode_upper;
 
 use main_options::profiles::{
-    copy_profile_configs, set_any_status_garage, set_bank_money, set_dealerships_discovered_status,
-    set_experience, set_experience_skills, set_player_map_position, set_profile_name,
+    copy_profile_configs, set_any_status_garage, set_bank_money, set_bus_experience_skills,
+    set_dealerships_discovered_status, set_experience, set_experience_skills, BUS_SKILL_MAX_RANK, set_player_map_position, set_profile_name,
     set_visited_cities,
 };
 use main_options::trailers::{
@@ -27,6 +27,7 @@ use std::path::Path;
 
 use main_options::routes::{cancel_current_job as cancel_job_backend, get_route_catalog, get_save_game_route_data as get_route_data_backend, start_route as start_route_backend};
 use structs::vec_routes::{CustomRoutePayload, SaveRouteDataResponse};
+use structs::bus_experience_skills::BusExperienceSkills;
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
     DefaultResponse, DeveloperValues, ListCamerasResponse, ListProfilesResponse,
@@ -609,6 +610,54 @@ async fn set_profile_experience_skills(
     };
 
     save_file(dir_save.to_string(), experience_skills).await;
+
+    return Ok(DefaultResponse { res: true });
+}
+
+#[tauri::command]
+async fn set_profile_bus_experience_skills(
+    dir_save: &str,
+    experience: u32,
+    long_duty: u8,
+    tight_schedule: u8,
+    satisfaction_decrease: u8,
+    low_acceleration: u8,
+    satisfaction_increase: u8,
+    ecodriving: u8,
+) -> Result<DefaultResponse, ()> {
+    let bus = BusExperienceSkills {
+        experience,
+        long_duty,
+        tight_schedule,
+        satisfaction_decrease,
+        low_acceleration,
+        satisfaction_increase,
+        ecodriving,
+    };
+
+    let skills = [
+        bus.long_duty,
+        bus.tight_schedule,
+        bus.satisfaction_decrease,
+        bus.low_acceleration,
+        bus.satisfaction_increase,
+        bus.ecodriving,
+    ];
+    if skills.iter().any(|rank| *rank > BUS_SKILL_MAX_RANK) {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let bus_skills: Vec<String> = match set_bus_experience_skills(&file, &bus) {
+        Some(bus_skills) => bus_skills,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    save_file(dir_save.to_string(), bus_skills).await;
 
     return Ok(DefaultResponse { res: true });
 }
@@ -1199,6 +1248,7 @@ pub fn run() {
             set_cities_visited,
             set_dealerships_discovered,
             set_profile_experience_skills,
+            set_profile_bus_experience_skills,
             backup_profile,
             copy_profile,
             copy_controls_config,
