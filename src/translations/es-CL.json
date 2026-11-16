@@ -192,6 +192,59 @@
                     "urgency_urgent": "Urgente"
                 }
             },
+            "create_car_route": {
+                "description_card": "Crea un trabajo de mensajería para tu auto con el origen, destino, paquete y auto que prefieras.",
+                "label_card": "Crear ruta en auto",
+                "modal": {
+                    "title": "Creador de rutas en auto",
+                    "description": "Crea un trabajo de mensajería para tu auto. Aparece en el despacho de autos del juego.",
+                    "btn_open": "Crear ruta en auto",
+                    "btn_close": "Cerrar",
+                    "btn_reload": "Recargar datos de la partida",
+                    "btn_apply": "Crear oferta",
+                    "btn_new_route": "Crear otra ruta",
+                    "loading_data": "Leyendo los trabajos de auto, empresas y autos de la partida...",
+                    "not_available": "Esta partida no tiene trabajos de auto. Necesitas ATS con la conducción de autos disponible.",
+                    "step_origin": "¿Dónde empieza?",
+                    "step_job": "¿Cuál es el trabajo?",
+                    "step_destination": "¿A dónde va?",
+                    "step_details": "Auto y cliente",
+                    "origin_city_label": "Ciudad de origen",
+                    "origin_company_label": "Empresa de origen",
+                    "dest_city_label": "Ciudad de destino",
+                    "dest_company_label": "Empresa de destino",
+                    "filter_discovered_only": "Mostrar solo ciudades descubiertas",
+                    "job_label": "Trabajo",
+                    "cargo_label": "Paquete",
+                    "job_delivery": "Entrega",
+                    "job_driving": "Traslado (solo conducir el auto)",
+                    "job_express": "Exprés",
+                    "show_locked_jobs": "Incluir trabajos por encima de tu calificación de mensajero",
+                    "locked_job_hint": "Requiere calificación de mensajero {rating}. Puede que el juego aún no te deje aceptarlo.",
+                    "distance_hint": "Distancia habitual de este trabajo: {min}-{max} km.",
+                    "destination_hint": "Solo se muestran destinos a {min}-{max} km: el juego descarta las ofertas fuera del rango de distancia del trabajo.",
+                    "long_route_mode": "Modo de prueba de ruta larga (permitir destinos fuera del rango del trabajo)",
+                    "long_route_hint": "La ruta real es de unos {km} km, pero se guarda como {max} km para que el juego la muestre. El pago se calcula con {max} km.",
+                    "no_destinations": "Ningún destino está dentro del rango de distancia de este trabajo desde el origen. Elige otro trabajo u origen.",
+                    "car_label": "Auto de la empresa",
+                    "no_cars": "Ningún auto de empresa de esta partida sirve para este trabajo.",
+                    "urgency_label": "Nivel de urgencia",
+                    "urgency_normal": "Estándar",
+                    "urgency_urgent": "Urgente",
+                    "urgency_critical": "Crítico",
+                    "prio_label": "Al cliente le importa",
+                    "prio_time": "Tiempo de entrega",
+                    "prio_cargo_handling": "Manejo del paquete",
+                    "prio_vehicle_appearance": "Aspecto del auto",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Todos los espacios del despacho están ocupados; se reemplazará la oferta que vence primero.",
+                    "active_job_warning": "Tienes un trabajo de auto activo: termínalo o cancélalo antes de aceptar la nueva oferta.",
+                    "close_game_note": "Guarda y cierra el juego antes de aplicar. Los cambios aparecen al volver a cargar la partida.",
+                    "success_title": "¡Ruta en auto lista!",
+                    "next_offer": "Carga esta partida en el juego y abre el despacho de autos: tu trabajo empieza en {company}, {city}.",
+                    "error_message": "No se pudo crear la ruta en auto. Recarga los datos y comprueba que el trabajo, el auto y las empresas existan en esta partida."
+                }
+            },
             "convoy_share": {
                 "description_card": "Exporta o importa un código de ruta para sincronizar rutas con amigos en convoy multijugador.",
                 "label_card": "Compartir Ruta para Convoy",
@@ -256,6 +309,28 @@
                         "placeholder": "Introduce la cantidad de dinero en EUR"
                     },
                     "title": "Cambiar dinero"
+                }
+            },
+            "bus_skills": {
+                "description_card": "Cambia la experiencia y las habilidades de autobús (ETS2 1.62+)",
+                "label_card": "Experiencia y habilidades de autobús",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_max": "Maximizar todo",
+                    "btn_open": "Abrir",
+                    "description": "Define la experiencia de autobús y el nivel de cada habilidad de autobús (máximo 3). Requiere una partida de ETS2 1.62 o posterior.",
+                    "ecodriving": "Conducción ecológica",
+                    "input_experience": {
+                        "label": "Experiencia de autobús",
+                        "placeholder": "Ingresa la cantidad de experiencia de autobús en números"
+                    },
+                    "long_duty": "Turnos más largos",
+                    "low_acceleration": "Viaje suave",
+                    "satisfaction_decrease": "Servicio premium",
+                    "satisfaction_increase": "Favorito de los pasajeros",
+                    "tight_schedule": "Horarios exigentes",
+                    "title": "Experiencia y habilidades de autobús"
                 }
             },
             "dealer_visited": {
@@ -578,6 +653,56 @@
                     "btn_open": "Abrir",
                     "description": "Introduce la nueva matrícula del camión. Recuerda quitar tu matrícula de Word of Trucks",
                     "title": "Cambiar matrícula del camión"
+                }
+            },
+            "license_plate_ats": {
+                "description_card": "Pon una matrícula de cualquier estado en tu camión, remolque o auto",
+                "label_card": "Matrículas de los estados",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Cerrar",
+                    "btn_open": "Abrir",
+                    "btn_random": "Número aleatorio",
+                    "current_plate": "Matrícula actual: {plate}",
+                    "description": "Elige un estado y uno de sus diseños de matrícula. La matrícula se guarda con el mismo diseño que el juego usa para ese estado.",
+                    "input_design": {
+                        "label": "Diseño de matrícula",
+                        "placeholder": "Selecciona un diseño"
+                    },
+                    "input_state": {
+                        "label": "Estado",
+                        "placeholder": "Selecciona un estado"
+                    },
+                    "input_text": {
+                        "label": "Texto de la matrícula",
+                        "placeholder": "Ingresa el texto"
+                    },
+                    "load_error": "No se pudieron leer las matrículas de esta partida",
+                    "loading": "Cargando matrículas...",
+                    "no_vehicle": {
+                        "car": "Esta partida no tiene auto",
+                        "trailer": "Esta partida no tiene remolque",
+                        "truck": "Esta partida no tiene camión"
+                    },
+                    "plate_types": {
+                        "bus": "Autobús",
+                        "car": "Auto",
+                        "rigid": "Camión rígido",
+                        "trailer": "Remolque",
+                        "truck": "Camión",
+                        "truck_city": "Camión urbano"
+                    },
+                    "preview_front": "Delantera",
+                    "preview_note": "Vista previa con el fondo y la fuente reales del estado; en el juego el texto puede quedar un poco desplazado.",
+                    "preview_rear": "Trasera",
+                    "target_label": "Vehículo",
+                    "targets": {
+                        "car": "Auto",
+                        "trailer": "Remolque",
+                        "truck": "Camión"
+                    },
+                    "text_help": "Formato de este diseño: {pattern}. Se permiten letras, números, espacios y guiones.",
+                    "title": "Matrículas de los estados"
                 }
             },
             "repair_all_trucks": {

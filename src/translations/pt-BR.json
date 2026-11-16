@@ -169,6 +169,28 @@
                     "title": "Mudar dinheiro"
                 }
             },
+            "bus_skills": {
+                "description_card": "Altere a experiência e as habilidades de ônibus (ETS2 1.62+)",
+                "label_card": "Experiência e habilidades de ônibus",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Fechar",
+                    "btn_max": "Maximizar tudo",
+                    "btn_open": "Abrir",
+                    "description": "Defina a experiência de ônibus e o nível de cada habilidade de ônibus (máximo 3). Requer um jogo salvo do ETS2 1.62 ou mais recente.",
+                    "ecodriving": "Condução econômica",
+                    "input_experience": {
+                        "label": "Experiência de ônibus",
+                        "placeholder": "Digite a quantidade de experiência de ônibus em números"
+                    },
+                    "long_duty": "Jornadas mais longas",
+                    "low_acceleration": "Viagem suave",
+                    "satisfaction_decrease": "Serviço premium",
+                    "satisfaction_increase": "Favorito dos passageiros",
+                    "tight_schedule": "Horários exigentes",
+                    "title": "Experiência e habilidades de ônibus"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Define a condição das concessionárias no seu perfil",
                 "label_card": "Descobrir todas as concessionárias",
@@ -491,6 +513,56 @@
                     "title": "Mudar placa do caminhão"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Coloque uma placa de qualquer estado no seu caminhão, reboque ou carro",
+                "label_card": "Placas dos estados",
+                "modal": {
+                    "btn_apply": "Aplicar",
+                    "btn_close": "Fechar",
+                    "btn_open": "Abrir",
+                    "btn_random": "Número aleatório",
+                    "current_plate": "Placa atual: {plate}",
+                    "description": "Escolha um estado e um dos seus modelos de placa. A placa é salva com o mesmo modelo que o jogo usa para esse estado.",
+                    "input_design": {
+                        "label": "Modelo da placa",
+                        "placeholder": "Selecione um modelo"
+                    },
+                    "input_state": {
+                        "label": "Estado",
+                        "placeholder": "Selecione um estado"
+                    },
+                    "input_text": {
+                        "label": "Texto da placa",
+                        "placeholder": "Digite o texto"
+                    },
+                    "load_error": "Não foi possível ler as placas deste jogo salvo",
+                    "loading": "Carregando placas...",
+                    "no_vehicle": {
+                        "car": "Este jogo salvo não tem carro",
+                        "trailer": "Este jogo salvo não tem reboque",
+                        "truck": "Este jogo salvo não tem caminhão"
+                    },
+                    "plate_types": {
+                        "bus": "Ônibus",
+                        "car": "Carro",
+                        "rigid": "Caminhão rígido",
+                        "trailer": "Reboque",
+                        "truck": "Caminhão",
+                        "truck_city": "Caminhão urbano"
+                    },
+                    "preview_front": "Dianteira",
+                    "preview_note": "Prévia com o fundo e a fonte reais do estado; no jogo o texto pode ficar um pouco deslocado.",
+                    "preview_rear": "Traseira",
+                    "target_label": "Veículo",
+                    "targets": {
+                        "car": "Carro",
+                        "trailer": "Reboque",
+                        "truck": "Caminhão"
+                    },
+                    "text_help": "Formato deste modelo: {pattern}. Permitido: letras, números, espaços e hífens.",
+                    "title": "Placas dos estados"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Reparar todos os caminhões da frota",
                 "label_card": "Reparar todos os caminhões",
@@ -563,6 +635,61 @@
                         "message_1": "- Você precisa habilitar o console e o modo de desenvolvedor para usar essa opção; você consegue fazer isso nas configurações (com o jogo fechado)",
                         "message_2": "- Para gerar novas coordenadas, você precisa usar a seguinte combinação de teclas: <b>Alt + F12</b>"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Crie um trabalho de entrega para o seu carro com a origem, o destino, o pacote e o carro que preferir.",
+                "label_card": "Criar rota de carro",
+                "modal": {
+                    "title": "Criador de rotas de carro",
+                    "description": "Crie um trabalho de entrega para o seu carro. Ele aparece no despacho de carros do jogo.",
+                    "btn_open": "Criar rota de carro",
+                    "btn_close": "Fechar",
+                    "btn_reload": "Recarregar dados do jogo salvo",
+                    "btn_apply": "Criar oferta",
+                    "btn_new_route": "Criar outra rota",
+                    "loading_data": "Lendo os trabalhos de carro, empresas e carros do jogo salvo...",
+                    "not_available": "Este jogo salvo não tem trabalhos de carro. É preciso o ATS com a direção de carros disponível.",
+                    "step_origin": "Onde começa?",
+                    "step_job": "Qual é o trabalho?",
+                    "step_destination": "Para onde vai?",
+                    "step_details": "Carro e cliente",
+                    "origin_city_label": "Cidade de origem",
+                    "origin_company_label": "Empresa de origem",
+                    "dest_city_label": "Cidade de destino",
+                    "dest_company_label": "Empresa de destino",
+                    "filter_discovered_only": "Mostrar apenas cidades descobertas",
+                    "job_label": "Trabalho",
+                    "cargo_label": "Pacote",
+                    "job_delivery": "Entrega",
+                    "job_driving": "Translado (apenas dirigir o carro)",
+                    "job_express": "Expresso",
+                    "show_locked_jobs": "Incluir trabalhos acima da sua avaliação de entregador",
+                    "locked_job_hint": "Requer avaliação de entregador {rating}. O jogo pode ainda não deixar você aceitá-lo.",
+                    "distance_hint": "Distância habitual deste trabalho: {min}-{max} km.",
+                    "destination_hint": "Só aparecem destinos a {min}-{max} km: o jogo descarta ofertas fora da faixa de distância do trabalho.",
+                    "long_route_mode": "Modo de teste de rota longa (permitir destinos além da faixa do trabalho)",
+                    "long_route_hint": "A rota real tem cerca de {km} km, mas é salva como {max} km para que o jogo a mostre. O pagamento é calculado com {max} km.",
+                    "no_destinations": "Nenhum destino está dentro da faixa de distância deste trabalho a partir da origem. Escolha outro trabalho ou origem.",
+                    "car_label": "Carro da empresa",
+                    "no_cars": "Nenhum carro da empresa neste jogo salvo serve para este trabalho.",
+                    "urgency_label": "Nível de urgência",
+                    "urgency_normal": "Padrão",
+                    "urgency_urgent": "Urgente",
+                    "urgency_critical": "Crítico",
+                    "prio_label": "O cliente se importa com",
+                    "prio_time": "Tempo de entrega",
+                    "prio_cargo_handling": "Manuseio do pacote",
+                    "prio_vehicle_appearance": "Aparência do carro",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Todos os espaços do despacho estão em uso; a oferta que expira primeiro será substituída.",
+                    "active_job_warning": "Você tem um trabalho de carro ativo: termine ou cancele antes de aceitar a nova oferta.",
+                    "close_game_note": "Salve e feche o jogo antes de aplicar. As mudanças aparecem quando você carregar o jogo salvo de novo.",
+                    "success_title": "Rota de carro pronta!",
+                    "next_offer": "Carregue este jogo salvo no jogo e abra o despacho de carros: seu trabalho começa em {company}, {city}.",
+                    "error_message": "Não foi possível criar a rota de carro. Recarregue os dados e verifique se o trabalho, o carro e as empresas existem neste jogo salvo."
                 }
             }
         }

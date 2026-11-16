@@ -169,6 +169,28 @@
                     "title": "修改金币数量"
                 }
             },
+            "bus_skills": {
+                "description_card": "修改巴士经验值和技能 (ETS2 1.62+)",
+                "label_card": "巴士经验值和技能",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_max": "全部最大",
+                    "btn_open": "打开",
+                    "description": "设置巴士经验值和每项巴士技能的等级(最高 3 级)。需要 ETS2 1.62 或更新版本的存档。",
+                    "ecodriving": "节能驾驶",
+                    "input_experience": {
+                        "label": "巴士经验值",
+                        "placeholder": "请以数字输入巴士经验值"
+                    },
+                    "long_duty": "更长班次",
+                    "low_acceleration": "平稳旅程",
+                    "satisfaction_decrease": "优质服务",
+                    "satisfaction_increase": "乘客最爱",
+                    "tight_schedule": "紧凑时刻表",
+                    "title": "巴士经验值和技能"
+                }
+            },
             "dealer_visited": {
                 "description_card": "修改卡车经销商解锁状态",
                 "label_card": "解锁所有卡车经销商",
@@ -491,6 +513,56 @@
                     "title": "修改卡车车牌"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "为你的卡车、挂车或汽车挂上任意州的车牌",
+                "label_card": "各州车牌",
+                "modal": {
+                    "btn_apply": "应用",
+                    "btn_close": "关闭",
+                    "btn_open": "打开",
+                    "btn_random": "随机号码",
+                    "current_plate": "当前车牌:{plate}",
+                    "description": "选择一个州及其车牌样式之一。车牌会以游戏在该州使用的相同样式保存。",
+                    "input_design": {
+                        "label": "车牌样式",
+                        "placeholder": "选择样式"
+                    },
+                    "input_state": {
+                        "label": "州",
+                        "placeholder": "选择州"
+                    },
+                    "input_text": {
+                        "label": "车牌文字",
+                        "placeholder": "输入文字"
+                    },
+                    "load_error": "无法读取此存档的车牌",
+                    "loading": "正在加载车牌...",
+                    "no_vehicle": {
+                        "car": "此存档没有汽车",
+                        "trailer": "此存档没有挂车",
+                        "truck": "此存档没有卡车"
+                    },
+                    "plate_types": {
+                        "bus": "巴士",
+                        "car": "汽车",
+                        "rigid": "厢式卡车",
+                        "trailer": "挂车",
+                        "truck": "卡车",
+                        "truck_city": "城市卡车"
+                    },
+                    "preview_front": "前",
+                    "preview_note": "使用该州真实背景和字体的预览;游戏中文字位置可能略有不同。",
+                    "preview_rear": "后",
+                    "target_label": "车辆",
+                    "targets": {
+                        "car": "汽车",
+                        "trailer": "挂车",
+                        "truck": "卡车"
+                    },
+                    "text_help": "此样式的格式:{pattern}。允许:字母、数字、空格和连字符。",
+                    "title": "各州车牌"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "修理你所拥有的所有卡车",
                 "label_card": "修理所有卡车",
@@ -563,6 +635,61 @@
                         "message_1": "- 要使用此选项，您需要先启用控制台和开发者模式；请在游戏关闭后，前往设置中进行相关操作",
                         "message_2": "- 按下 <b> Alt + F12</b> 就能立即生成一组新的坐标并在屏幕上显示出来"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "用你想要的起点、终点、包裹和汽车,为你的汽车创建一个快递任务。",
+                "label_card": "创建汽车路线",
+                "modal": {
+                    "title": "汽车路线创建器",
+                    "description": "为你的汽车创建一个快递任务。它会出现在游戏的汽车调度中。",
+                    "btn_open": "创建汽车路线",
+                    "btn_close": "关闭",
+                    "btn_reload": "重新读取存档数据",
+                    "btn_apply": "创建任务",
+                    "btn_new_route": "再创建一条路线",
+                    "loading_data": "正在读取存档中的汽车任务、公司和汽车...",
+                    "not_available": "此存档没有汽车任务。需要可驾驶汽车的 ATS。",
+                    "step_origin": "从哪里出发?",
+                    "step_job": "是什么任务?",
+                    "step_destination": "要去哪里?",
+                    "step_details": "汽车和客户",
+                    "origin_city_label": "出发城市",
+                    "origin_company_label": "出发公司",
+                    "dest_city_label": "目的城市",
+                    "dest_company_label": "目的公司",
+                    "filter_discovered_only": "仅显示已发现的城市",
+                    "job_label": "任务",
+                    "cargo_label": "包裹",
+                    "job_delivery": "配送",
+                    "job_driving": "代驾 (只驾驶汽车)",
+                    "job_express": "特快",
+                    "show_locked_jobs": "包含高于你快递评分的任务",
+                    "locked_job_hint": "需要快递评分 {rating}。游戏可能暂时不允许你接受。",
+                    "distance_hint": "此任务的常见距离:{min}-{max} km。",
+                    "destination_hint": "只列出 {min}-{max} km 内的目的地:游戏会丢弃超出任务距离范围的任务。",
+                    "long_route_mode": "长路线测试模式 (允许超出任务范围的目的地)",
+                    "long_route_hint": "实际路线约 {km} km,但会保存为 {max} km 以便游戏显示。报酬按 {max} km 计算。",
+                    "no_destinations": "从起点出发,没有目的地在此任务的距离范围内。请选择其他任务或起点。",
+                    "car_label": "公司汽车",
+                    "no_cars": "此存档中没有适合此任务的公司汽车。",
+                    "urgency_label": "紧急程度",
+                    "urgency_normal": "标准",
+                    "urgency_urgent": "紧急",
+                    "urgency_critical": "非常紧急",
+                    "prio_label": "客户在意",
+                    "prio_time": "配送时间",
+                    "prio_cargo_handling": "包裹处理",
+                    "prio_vehicle_appearance": "汽车外观",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "所有调度位都已占用;最早过期的任务将被替换。",
+                    "active_job_warning": "你有一个进行中的汽车任务:请先完成或取消,再接受新任务。",
+                    "close_game_note": "应用前请保存并关闭游戏。重新加载存档后即可看到更改。",
+                    "success_title": "汽车路线已就绪!",
+                    "next_offer": "在游戏中加载此存档并打开汽车调度:你的任务从 {city} 的 {company} 开始。",
+                    "error_message": "无法创建汽车路线。请重新读取数据,并检查任务、汽车和公司是否存在于此存档中。"
                 }
             }
         }

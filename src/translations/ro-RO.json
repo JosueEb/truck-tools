@@ -169,6 +169,28 @@
                     "title": "Schimbă Banii"
                 }
             },
+            "bus_skills": {
+                "description_card": "Schimbați experiența și abilitățile de autobuz (ETS2 1.62+)",
+                "label_card": "Experiență și abilități de autobuz",
+                "modal": {
+                    "btn_apply": "Aplicați",
+                    "btn_close": "Închide",
+                    "btn_max": "Totul la maxim",
+                    "btn_open": "Deschide",
+                    "description": "Setați experiența de autobuz și nivelul fiecărei abilități de autobuz (maximum 3). Necesită o salvare din ETS2 1.62 sau mai nouă.",
+                    "ecodriving": "Condus ecologic",
+                    "input_experience": {
+                        "label": "Experiență de autobuz",
+                        "placeholder": "Introduceți cantitatea de experiență de autobuz în cifre"
+                    },
+                    "long_duty": "Ture mai lungi",
+                    "low_acceleration": "Călătorie lină",
+                    "satisfaction_decrease": "Serviciu premium",
+                    "satisfaction_increase": "Preferatul pasagerilor",
+                    "tight_schedule": "Orare solicitante",
+                    "title": "Experiență și abilități de autobuz"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Setați toate statutul de dealer în profilul dvs",
                 "label_card": "Descoperiți toți dealerii",
@@ -491,6 +513,56 @@
                     "title": "Schimbați plăcuța de înmatriculare a camionului"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Puneți o plăcuță de înmatriculare din orice stat pe camionul, remorca sau mașina dvs.",
+                "label_card": "Plăcuțe de înmatriculare ale statelor",
+                "modal": {
+                    "btn_apply": "Aplicați",
+                    "btn_close": "Închide",
+                    "btn_open": "Deschide",
+                    "btn_random": "Număr aleatoriu",
+                    "current_plate": "Plăcuța actuală: {plate}",
+                    "description": "Alegeți un stat și unul dintre modelele sale de plăcuță. Plăcuța este salvată cu același model pe care jocul îl folosește pentru acel stat.",
+                    "input_design": {
+                        "label": "Modelul plăcuței",
+                        "placeholder": "Selectați un model"
+                    },
+                    "input_state": {
+                        "label": "Stat",
+                        "placeholder": "Selectați un stat"
+                    },
+                    "input_text": {
+                        "label": "Textul plăcuței",
+                        "placeholder": "Introduceți textul"
+                    },
+                    "load_error": "Nu s-au putut citi plăcuțele din această salvare",
+                    "loading": "Se încarcă plăcuțele...",
+                    "no_vehicle": {
+                        "car": "Această salvare nu are mașină",
+                        "trailer": "Această salvare nu are remorcă",
+                        "truck": "Această salvare nu are camion"
+                    },
+                    "plate_types": {
+                        "bus": "Autobuz",
+                        "car": "Mașină",
+                        "rigid": "Camion rigid",
+                        "trailer": "Remorcă",
+                        "truck": "Camion",
+                        "truck_city": "Camion urban"
+                    },
+                    "preview_front": "Față",
+                    "preview_note": "Previzualizare cu fundalul și fontul reale ale statului; în joc textul poate fi poziționat puțin diferit.",
+                    "preview_rear": "Spate",
+                    "target_label": "Vehicul",
+                    "targets": {
+                        "car": "Mașină",
+                        "trailer": "Remorcă",
+                        "truck": "Camion"
+                    },
+                    "text_help": "Formatul acestui model: {pattern}. Permise: litere, cifre, spații și cratime.",
+                    "title": "Plăcuțe de înmatriculare ale statelor"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Repara toate autocamioanele",
                 "label_card": "Reparati toate camioanele",
@@ -548,23 +620,78 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			},
+                "description_card": "Teleport to a location using the game debug camera",
+                "label_card": "Teleport player position",
+                "modal": {
+                    "btn_apply": "Teleport",
+                    "btn_how_to_use": "How to use",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "description": "Teleport to a location using the game debug camera",
+                    "title": "Teleport player position",
+                    "warning_message": {
+                        "title": "Remember",
+                        "message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
+                        "message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
+                    }
+                }
+            },
             "tab_title": "Camion"
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Creați o cursă de curierat pentru mașina dvs. cu plecarea, destinația, coletul și mașina preferate.",
+                "label_card": "Creați o rută cu mașina",
+                "modal": {
+                    "title": "Constructor de rute cu mașina",
+                    "description": "Creați o cursă de curierat pentru mașina dvs. Apare în dispeceratul de mașini din joc.",
+                    "btn_open": "Creați o rută cu mașina",
+                    "btn_close": "Închide",
+                    "btn_reload": "Reîncărcați datele salvării",
+                    "btn_apply": "Creați oferta",
+                    "btn_new_route": "Creați altă rută",
+                    "loading_data": "Se citesc cursele cu mașina, companiile și mașinile din salvare...",
+                    "not_available": "Această salvare nu are curse cu mașina. Este nevoie de ATS cu condusul mașinilor disponibil.",
+                    "step_origin": "De unde pleacă?",
+                    "step_job": "Care este cursa?",
+                    "step_destination": "Unde merge?",
+                    "step_details": "Mașină și client",
+                    "origin_city_label": "Orașul de plecare",
+                    "origin_company_label": "Compania de plecare",
+                    "dest_city_label": "Orașul de destinație",
+                    "dest_company_label": "Compania de destinație",
+                    "filter_discovered_only": "Afișați doar orașele descoperite",
+                    "job_label": "Cursă",
+                    "cargo_label": "Colet",
+                    "job_delivery": "Livrare",
+                    "job_driving": "Transfer (doar conduceți mașina)",
+                    "job_express": "Expres",
+                    "show_locked_jobs": "Includeți curse peste ratingul dvs. de curier",
+                    "locked_job_hint": "Necesită rating de curier {rating}. Este posibil ca jocul să nu vă lase încă să o acceptați.",
+                    "distance_hint": "Distanța obișnuită pentru această cursă: {min}-{max} km.",
+                    "destination_hint": "Sunt afișate doar destinațiile aflate la {min}-{max} km: jocul elimină ofertele din afara intervalului de distanță al cursei.",
+                    "long_route_mode": "Mod de test pentru rute lungi (permiteți destinații în afara intervalului cursei)",
+                    "long_route_hint": "Ruta reală are aproximativ {km} km, dar este salvată ca {max} km pentru ca jocul să o afișeze. Plata se calculează pentru {max} km.",
+                    "no_destinations": "Nicio destinație nu se află în intervalul de distanță al acestei curse față de plecare. Alegeți altă cursă sau plecare.",
+                    "car_label": "Mașina companiei",
+                    "no_cars": "Nicio mașină a companiei din această salvare nu se potrivește acestei curse.",
+                    "urgency_label": "Nivel de urgență",
+                    "urgency_normal": "Standard",
+                    "urgency_urgent": "Urgent",
+                    "urgency_critical": "Critic",
+                    "prio_label": "Clientului îi pasă de",
+                    "prio_time": "Timpul de livrare",
+                    "prio_cargo_handling": "Manipularea coletului",
+                    "prio_vehicle_appearance": "Aspectul mașinii",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Toate locurile din dispecerat sunt ocupate; oferta care expiră prima va fi înlocuită.",
+                    "active_job_warning": "Aveți o cursă cu mașina activă: finalizați-o sau anulați-o înainte de a accepta noua ofertă.",
+                    "close_game_note": "Salvați și închideți jocul înainte de a aplica. Modificările apar când încărcați din nou salvarea.",
+                    "success_title": "Ruta cu mașina este gata!",
+                    "next_offer": "Încărcați această salvare în joc și deschideți dispeceratul de mașini: cursa dvs. începe la {company}, {city}.",
+                    "error_message": "Nu s-a putut crea ruta cu mașina. Reîncărcați datele și verificați că cursa, mașina și companiile există în această salvare."
+                }
+            }
         }
     }
 }

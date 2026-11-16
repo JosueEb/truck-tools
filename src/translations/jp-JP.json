@@ -169,6 +169,28 @@
                     "title": "所持金を変更"
                 }
             },
+            "bus_skills": {
+                "description_card": "バスの経験値とスキルを変更 (ETS2 1.62以降)",
+                "label_card": "バスの経験値とスキル",
+                "modal": {
+                    "btn_apply": "適用",
+                    "btn_close": "閉じる",
+                    "btn_max": "すべて最大",
+                    "btn_open": "開く",
+                    "description": "バスの経験値と各バススキルのランク(最大3)を設定します。ETS2 1.62以降のセーブが必要です。",
+                    "ecodriving": "エコドライブ",
+                    "input_experience": {
+                        "label": "バスの経験値",
+                        "placeholder": "バスの経験値を数字で入力してください"
+                    },
+                    "long_duty": "長時間勤務",
+                    "low_acceleration": "快適な乗り心地",
+                    "satisfaction_decrease": "プレミアムサービス",
+                    "satisfaction_increase": "乗客の人気者",
+                    "tight_schedule": "過密ダイヤ",
+                    "title": "バスの経験値とスキル"
+                }
+            },
             "dealer_visited": {
                 "description_card": "すべてのディーラーステータスをプロフィールに設定する",
                 "label_card": "すべてのディーラーを見る",
@@ -491,6 +513,56 @@
                     "title": "トラックのナンバープレートを変更する"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "トラック、トレーラー、車に好きな州のナンバープレートを付けます",
+                "label_card": "州のナンバープレート",
+                "modal": {
+                    "btn_apply": "適用",
+                    "btn_close": "閉じる",
+                    "btn_open": "開く",
+                    "btn_random": "ランダムな番号",
+                    "current_plate": "現在のナンバー: {plate}",
+                    "description": "州とそのナンバープレートのデザインを選んでください。ナンバープレートは、ゲームがその州で使うのと同じデザインで保存されます。",
+                    "input_design": {
+                        "label": "プレートのデザイン",
+                        "placeholder": "デザインを選択"
+                    },
+                    "input_state": {
+                        "label": "州",
+                        "placeholder": "州を選択"
+                    },
+                    "input_text": {
+                        "label": "プレートの文字",
+                        "placeholder": "文字を入力"
+                    },
+                    "load_error": "このセーブのナンバープレートを読み込めませんでした",
+                    "loading": "ナンバープレートを読み込み中...",
+                    "no_vehicle": {
+                        "car": "このセーブには車がありません",
+                        "trailer": "このセーブにはトレーラーがありません",
+                        "truck": "このセーブにはトラックがありません"
+                    },
+                    "plate_types": {
+                        "bus": "バス",
+                        "car": "車",
+                        "rigid": "単車トラック",
+                        "trailer": "トレーラー",
+                        "truck": "トラック",
+                        "truck_city": "市街地トラック"
+                    },
+                    "preview_front": "前",
+                    "preview_note": "州の実際の背景とフォントを使ったプレビューです。ゲーム内では文字の位置が少し異なる場合があります。",
+                    "preview_rear": "後ろ",
+                    "target_label": "車両",
+                    "targets": {
+                        "car": "車",
+                        "trailer": "トレーラー",
+                        "truck": "トラック"
+                    },
+                    "text_help": "このデザインの形式: {pattern}。使用できる文字: 英字、数字、スペース、ハイフン。",
+                    "title": "州のナンバープレート"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "すべての未稼働のトラックを修理する",
                 "label_card": "すべてのトラックを修理する",
@@ -563,6 +635,61 @@
                         "label": "距離 km",
                         "placeholder": "距離 km"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "好きな出発地、目的地、荷物、車で、車用の配達仕事を作成します。",
+                "label_card": "車のルートを作成",
+                "modal": {
+                    "title": "車のルート作成",
+                    "description": "車用の配達仕事を作成します。ゲームの車の配車画面に表示されます。",
+                    "btn_open": "車のルートを作成",
+                    "btn_close": "閉じる",
+                    "btn_reload": "セーブデータを再読み込み",
+                    "btn_apply": "オファーを作成",
+                    "btn_new_route": "別のルートを作成",
+                    "loading_data": "セーブの車の仕事、会社、車を読み込んでいます...",
+                    "not_available": "このセーブには車の仕事がありません。車の運転が利用できるATSが必要です。",
+                    "step_origin": "どこから出発しますか?",
+                    "step_job": "どんな仕事ですか?",
+                    "step_destination": "どこへ向かいますか?",
+                    "step_details": "車と顧客",
+                    "origin_city_label": "出発都市",
+                    "origin_company_label": "出発会社",
+                    "dest_city_label": "目的地の都市",
+                    "dest_company_label": "目的地の会社",
+                    "filter_discovered_only": "発見済みの都市のみ表示",
+                    "job_label": "仕事",
+                    "cargo_label": "荷物",
+                    "job_delivery": "配達",
+                    "job_driving": "回送(車を運転するだけ)",
+                    "job_express": "特急",
+                    "show_locked_jobs": "配達員評価を超える仕事も含める",
+                    "locked_job_hint": "配達員評価{rating}が必要です。ゲームではまだ受けられない場合があります。",
+                    "distance_hint": "この仕事の通常の距離: {min}-{max} km。",
+                    "destination_hint": "{min}-{max} km 離れた目的地のみ表示されます。ゲームは仕事の距離範囲外のオファーを削除します。",
+                    "long_route_mode": "長距離ルートのテストモード(仕事の範囲外の目的地を許可)",
+                    "long_route_hint": "実際のルートは約{km} kmですが、ゲームに表示させるため{max} kmとして保存されます。報酬は{max} kmで計算されます。",
+                    "no_destinations": "出発地からこの仕事の距離範囲内にある目的地がありません。別の仕事か出発地を選んでください。",
+                    "car_label": "社用車",
+                    "no_cars": "このセーブにはこの仕事に使える社用車がありません。",
+                    "urgency_label": "緊急度",
+                    "urgency_normal": "標準",
+                    "urgency_urgent": "至急",
+                    "urgency_critical": "最優先",
+                    "prio_label": "顧客が重視すること",
+                    "prio_time": "配達時間",
+                    "prio_cargo_handling": "荷物の扱い",
+                    "prio_vehicle_appearance": "車の外観",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "配車枠がすべて使用中です。最初に期限切れになるオファーが置き換えられます。",
+                    "active_job_warning": "進行中の車の仕事があります。新しいオファーを受ける前に完了するかキャンセルしてください。",
+                    "close_game_note": "適用する前にゲームをセーブして終了してください。セーブを再読み込みすると変更が反映されます。",
+                    "success_title": "車のルートの準備ができました!",
+                    "next_offer": "ゲームでこのセーブを読み込み、車の配車画面を開いてください。仕事は{city}の{company}から始まります。",
+                    "error_message": "車のルートを作成できませんでした。データを再読み込みし、仕事、車、会社がこのセーブにあるか確認してください。"
                 }
             }
         }

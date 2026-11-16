@@ -169,6 +169,28 @@
                     "title": "Thay đổi tiền"
                 }
             },
+            "bus_skills": {
+                "description_card": "Thay đổi kinh nghiệm và kỹ năng lái xe buýt (ETS2 1.62+)",
+                "label_card": "Kinh nghiệm và kỹ năng xe buýt",
+                "modal": {
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_max": "Tối đa tất cả",
+                    "btn_open": "Mở",
+                    "description": "Đặt kinh nghiệm xe buýt và cấp độ của từng kỹ năng xe buýt (tối đa 3). Cần bản lưu từ ETS2 1.62 trở lên.",
+                    "ecodriving": "Lái xe tiết kiệm",
+                    "input_experience": {
+                        "label": "Kinh nghiệm xe buýt",
+                        "placeholder": "Nhập lượng kinh nghiệm xe buýt bằng số"
+                    },
+                    "long_duty": "Ca làm dài hơn",
+                    "low_acceleration": "Hành trình êm ái",
+                    "satisfaction_decrease": "Dịch vụ cao cấp",
+                    "satisfaction_increase": "Được hành khách yêu thích",
+                    "tight_schedule": "Lịch trình khắt khe",
+                    "title": "Kinh nghiệm và kỹ năng xe buýt"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Đặt tất cả trạng thái đại lý vào hồ sơ của bạn",
                 "label_card": "Khám phá tất cả các đại lý",
@@ -491,6 +513,56 @@
                     "title": "Thay đổi biển số xe tải"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Gắn biển số của bất kỳ tiểu bang nào lên xe tải, moóc hoặc ô tô của bạn",
+                "label_card": "Biển số các tiểu bang",
+                "modal": {
+                    "btn_apply": "Áp dụng",
+                    "btn_close": "Đóng",
+                    "btn_open": "Mở",
+                    "btn_random": "Số ngẫu nhiên",
+                    "current_plate": "Biển số hiện tại: {plate}",
+                    "description": "Chọn một tiểu bang và một mẫu biển số của bang đó. Biển số được lưu với đúng mẫu mà trò chơi dùng cho tiểu bang đó.",
+                    "input_design": {
+                        "label": "Mẫu biển số",
+                        "placeholder": "Chọn một mẫu"
+                    },
+                    "input_state": {
+                        "label": "Tiểu bang",
+                        "placeholder": "Chọn một tiểu bang"
+                    },
+                    "input_text": {
+                        "label": "Nội dung biển số",
+                        "placeholder": "Nhập nội dung"
+                    },
+                    "load_error": "Không thể đọc biển số trong bản lưu này",
+                    "loading": "Đang tải biển số...",
+                    "no_vehicle": {
+                        "car": "Bản lưu này không có ô tô",
+                        "trailer": "Bản lưu này không có moóc",
+                        "truck": "Bản lưu này không có xe tải"
+                    },
+                    "plate_types": {
+                        "bus": "Xe buýt",
+                        "car": "Ô tô",
+                        "rigid": "Xe tải thùng",
+                        "trailer": "Moóc",
+                        "truck": "Xe tải",
+                        "truck_city": "Xe tải đô thị"
+                    },
+                    "preview_front": "Phía trước",
+                    "preview_note": "Xem trước với nền và phông chữ thật của tiểu bang; trong trò chơi chữ có thể lệch một chút.",
+                    "preview_rear": "Phía sau",
+                    "target_label": "Phương tiện",
+                    "targets": {
+                        "car": "Ô tô",
+                        "trailer": "Moóc",
+                        "truck": "Xe tải"
+                    },
+                    "text_help": "Định dạng của mẫu này: {pattern}. Cho phép: chữ cái, số, khoảng trắng và dấu gạch ngang.",
+                    "title": "Biển số các tiểu bang"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Sửa chữa tất cả các đội xe tải",
                 "label_card": "Sửa chữa tất cả xe tải",
@@ -563,6 +635,61 @@
                         "message_1": "- Bạn cần bật console và chế độ nhà phát triển để sử dụng tùy chọn này; Bạn có thể làm điều này trong các cài đặt (với trò chơi đã đóng)",
                         "message_2": "- Để tạo tọa độ mới, bạn cần sử dụng kết hợp khóa sau: <b>Alt + F12</b>"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Tạo công việc giao hàng cho ô tô của bạn với điểm đi, điểm đến, gói hàng và xe tùy chọn.",
+                "label_card": "Tạo tuyến đường ô tô",
+                "modal": {
+                    "title": "Trình tạo tuyến đường ô tô",
+                    "description": "Tạo công việc giao hàng cho ô tô của bạn. Công việc sẽ xuất hiện trong mục điều phối ô tô của trò chơi.",
+                    "btn_open": "Tạo tuyến đường ô tô",
+                    "btn_close": "Đóng",
+                    "btn_reload": "Tải lại dữ liệu bản lưu",
+                    "btn_apply": "Tạo đơn hàng",
+                    "btn_new_route": "Tạo tuyến đường khác",
+                    "loading_data": "Đang đọc công việc ô tô, công ty và ô tô trong bản lưu...",
+                    "not_available": "Bản lưu này không có công việc ô tô. Cần ATS có chế độ lái ô tô.",
+                    "step_origin": "Bắt đầu từ đâu?",
+                    "step_job": "Công việc là gì?",
+                    "step_destination": "Đi đến đâu?",
+                    "step_details": "Ô tô và khách hàng",
+                    "origin_city_label": "Thành phố xuất phát",
+                    "origin_company_label": "Công ty xuất phát",
+                    "dest_city_label": "Thành phố đến",
+                    "dest_company_label": "Công ty đến",
+                    "filter_discovered_only": "Chỉ hiện các thành phố đã khám phá",
+                    "job_label": "Công việc",
+                    "cargo_label": "Gói hàng",
+                    "job_delivery": "Giao hàng",
+                    "job_driving": "Chuyển xe (chỉ lái ô tô)",
+                    "job_express": "Hỏa tốc",
+                    "show_locked_jobs": "Bao gồm công việc vượt mức đánh giá giao hàng của bạn",
+                    "locked_job_hint": "Cần đánh giá giao hàng {rating}. Trò chơi có thể chưa cho bạn nhận công việc này.",
+                    "distance_hint": "Quãng đường thường gặp của công việc này: {min}-{max} km.",
+                    "destination_hint": "Chỉ liệt kê điểm đến cách {min}-{max} km: trò chơi loại bỏ đơn hàng nằm ngoài khoảng cách của công việc.",
+                    "long_route_mode": "Chế độ thử tuyến dài (cho phép điểm đến ngoài khoảng cách của công việc)",
+                    "long_route_hint": "Tuyến thực tế khoảng {km} km nhưng được lưu là {max} km để trò chơi hiển thị. Tiền công tính theo {max} km.",
+                    "no_destinations": "Không có điểm đến nào nằm trong khoảng cách của công việc này tính từ điểm xuất phát. Hãy chọn công việc hoặc điểm xuất phát khác.",
+                    "car_label": "Xe của công ty",
+                    "no_cars": "Không có xe công ty nào trong bản lưu này phù hợp với công việc.",
+                    "urgency_label": "Mức độ khẩn cấp",
+                    "urgency_normal": "Tiêu chuẩn",
+                    "urgency_urgent": "Khẩn cấp",
+                    "urgency_critical": "Rất khẩn cấp",
+                    "prio_label": "Khách hàng quan tâm đến",
+                    "prio_time": "Thời gian giao hàng",
+                    "prio_cargo_handling": "Cách xử lý gói hàng",
+                    "prio_vehicle_appearance": "Ngoại hình xe",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Tất cả vị trí điều phối đều đã dùng; đơn hàng hết hạn sớm nhất sẽ bị thay thế.",
+                    "active_job_warning": "Bạn đang có công việc ô tô: hãy hoàn thành hoặc hủy trước khi nhận đơn hàng mới.",
+                    "close_game_note": "Lưu và đóng trò chơi trước khi áp dụng. Thay đổi sẽ xuất hiện khi bạn tải lại bản lưu.",
+                    "success_title": "Tuyến đường ô tô đã sẵn sàng!",
+                    "next_offer": "Tải bản lưu này trong trò chơi và mở mục điều phối ô tô: công việc của bạn bắt đầu tại {company}, {city}.",
+                    "error_message": "Không thể tạo tuyến đường ô tô. Hãy tải lại dữ liệu và kiểm tra công việc, ô tô và công ty có tồn tại trong bản lưu này."
                 }
             }
         }

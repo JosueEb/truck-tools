@@ -169,6 +169,28 @@
                     "title": "Parayı düzenle"
                 }
             },
+            "bus_skills": {
+                "description_card": "Otobüs tecrübesini ve yeteneklerini değiştir (ETS2 1.62+)",
+                "label_card": "Otobüs tecrübesi ve yetenekleri",
+                "modal": {
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_max": "Hepsini maksimuma çıkar",
+                    "btn_open": "Aç",
+                    "description": "Otobüs tecrübesini ve her otobüs yeteneğinin seviyesini ayarla (en fazla 3). ETS2 1.62 veya daha yeni bir kayıt gerektirir.",
+                    "ecodriving": "Ekonomik sürüş",
+                    "input_experience": {
+                        "label": "Otobüs tecrübesi",
+                        "placeholder": "Otobüs tecrübesi miktarını sayı olarak gir"
+                    },
+                    "long_duty": "Daha uzun seferler",
+                    "low_acceleration": "Yumuşak yolculuk",
+                    "satisfaction_decrease": "Premium hizmet",
+                    "satisfaction_increase": "Yolcuların gözdesi",
+                    "tight_schedule": "Zorlu tarifeler",
+                    "title": "Otobüs tecrübesi ve yetenekleri"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Profilinizdeki bayilerin durumunu düzenleyin",
                 "label_card": "Tüm bayileri keşfet",
@@ -491,6 +513,56 @@
                     "title": "Kamyon plakasını değiştir"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Kamyonunuza, dorsenize veya arabanıza herhangi bir eyaletin plakasını takın",
+                "label_card": "Eyalet plakaları",
+                "modal": {
+                    "btn_apply": "Uygula",
+                    "btn_close": "Kapat",
+                    "btn_open": "Aç",
+                    "btn_random": "Rastgele numara",
+                    "current_plate": "Mevcut plaka: {plate}",
+                    "description": "Bir eyalet ve onun plaka tasarımlarından birini seçin. Plaka, oyunun o eyalet için kullandığı aynı tasarımla kaydedilir.",
+                    "input_design": {
+                        "label": "Plaka tasarımı",
+                        "placeholder": "Bir tasarım seçin"
+                    },
+                    "input_state": {
+                        "label": "Eyalet",
+                        "placeholder": "Bir eyalet seçin"
+                    },
+                    "input_text": {
+                        "label": "Plaka metni",
+                        "placeholder": "Metin girin"
+                    },
+                    "load_error": "Bu kayıttaki plakalar okunamadı",
+                    "loading": "Plakalar yükleniyor...",
+                    "no_vehicle": {
+                        "car": "Bu kayıtta araba yok",
+                        "trailer": "Bu kayıtta dorse yok",
+                        "truck": "Bu kayıtta kamyon yok"
+                    },
+                    "plate_types": {
+                        "bus": "Otobüs",
+                        "car": "Araba",
+                        "rigid": "Kasalı kamyon",
+                        "trailer": "Dorse",
+                        "truck": "Kamyon",
+                        "truck_city": "Şehir kamyonu"
+                    },
+                    "preview_front": "Ön",
+                    "preview_note": "Eyaletin gerçek arka planı ve yazı tipiyle önizleme; oyunda metin biraz farklı konumda olabilir.",
+                    "preview_rear": "Arka",
+                    "target_label": "Araç",
+                    "targets": {
+                        "car": "Araba",
+                        "trailer": "Dorse",
+                        "truck": "Kamyon"
+                    },
+                    "text_help": "Bu tasarımın biçimi: {pattern}. İzin verilenler: harfler, rakamlar, boşluklar ve kısa çizgiler.",
+                    "title": "Eyalet plakaları"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Tüm şirket kamyonlarını onarır",
                 "label_card": "Tüm kamyonları onarın",
@@ -565,6 +637,61 @@
                 }
             },
             "tab_title": "Kamyon"
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Arabanız için istediğiniz çıkış, varış, paket ve araba ile bir kurye işi oluşturun.",
+                "label_card": "Araba rotası oluştur",
+                "modal": {
+                    "title": "Araba rotası oluşturucu",
+                    "description": "Arabanız için bir kurye işi oluşturun. Oyundaki araba iş merkezinde görünür.",
+                    "btn_open": "Araba rotası oluştur",
+                    "btn_close": "Kapat",
+                    "btn_reload": "Kayıt verilerini yeniden yükle",
+                    "btn_apply": "Teklif oluştur",
+                    "btn_new_route": "Başka bir rota oluştur",
+                    "loading_data": "Kayıttaki araba işleri, şirketler ve arabalar okunuyor...",
+                    "not_available": "Bu kayıtta araba işi yok. Araba sürüşünün açık olduğu ATS gerekir.",
+                    "step_origin": "Nereden başlıyor?",
+                    "step_job": "İş nedir?",
+                    "step_destination": "Nereye gidiyor?",
+                    "step_details": "Araba ve müşteri",
+                    "origin_city_label": "Çıkış şehri",
+                    "origin_company_label": "Çıkış şirketi",
+                    "dest_city_label": "Varış şehri",
+                    "dest_company_label": "Varış şirketi",
+                    "filter_discovered_only": "Yalnızca keşfedilen şehirleri göster",
+                    "job_label": "İş",
+                    "cargo_label": "Paket",
+                    "job_delivery": "Teslimat",
+                    "job_driving": "Araç transferi (yalnızca arabayı sür)",
+                    "job_express": "Ekspres",
+                    "show_locked_jobs": "Kurye puanınızın üzerindeki işleri dahil et",
+                    "locked_job_hint": "{rating} kurye puanı gerektirir. Oyun henüz kabul etmenize izin vermeyebilir.",
+                    "distance_hint": "Bu işin olağan mesafesi: {min}-{max} km.",
+                    "destination_hint": "Yalnızca {min}-{max} km uzaklıktaki varış noktaları listelenir: oyun, işin mesafe aralığı dışındaki teklifleri siler.",
+                    "long_route_mode": "Uzun rota test modu (işin aralığı dışındaki varış noktalarına izin ver)",
+                    "long_route_hint": "Gerçek rota yaklaşık {km} km, ancak oyunun göstermesi için {max} km olarak kaydedilir. Ödeme {max} km üzerinden hesaplanır.",
+                    "no_destinations": "Hiçbir varış noktası bu işin çıkıştan itibaren mesafe aralığında değil. Başka bir iş veya çıkış seçin.",
+                    "car_label": "Şirket arabası",
+                    "no_cars": "Bu kayıttaki hiçbir şirket arabası bu işe uygun değil.",
+                    "urgency_label": "Aciliyet seviyesi",
+                    "urgency_normal": "Standart",
+                    "urgency_urgent": "Acil",
+                    "urgency_critical": "Kritik",
+                    "prio_label": "Müşterinin önem verdiği",
+                    "prio_time": "Teslim süresi",
+                    "prio_cargo_handling": "Paketin taşınması",
+                    "prio_vehicle_appearance": "Arabanın görünümü",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "İş merkezindeki tüm yerler dolu; ilk sona erecek teklif değiştirilecek.",
+                    "active_job_warning": "Aktif bir araba işiniz var: yeni teklifi kabul etmeden önce bitirin veya iptal edin.",
+                    "close_game_note": "Uygulamadan önce oyunu kaydedip kapatın. Değişiklikler kaydı tekrar yüklediğinizde görünür.",
+                    "success_title": "Araba rotası hazır!",
+                    "next_offer": "Bu kaydı oyunda yükleyin ve araba iş merkezini açın: işiniz {company}, {city} konumunda başlıyor.",
+                    "error_message": "Araba rotası oluşturulamadı. Verileri yeniden yükleyin ve iş, araba ve şirketlerin bu kayıtta bulunduğunu kontrol edin."
+                }
+            }
         }
     }
 }

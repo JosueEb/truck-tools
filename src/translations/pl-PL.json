@@ -169,6 +169,28 @@
                     "title": "Edytuj ilość pieniędzy"
                 }
             },
+            "bus_skills": {
+                "description_card": "Zmień doświadczenie i umiejętności autobusowe (ETS2 1.62+)",
+                "label_card": "Doświadczenie i umiejętności autobusowe",
+                "modal": {
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_max": "Wszystko na maksimum",
+                    "btn_open": "Otwórz",
+                    "description": "Ustaw doświadczenie autobusowe i poziom każdej umiejętności autobusowej (maksymalnie 3). Wymaga zapisu z ETS2 1.62 lub nowszego.",
+                    "ecodriving": "Ekonomiczna jazda",
+                    "input_experience": {
+                        "label": "Doświadczenie autobusowe",
+                        "placeholder": "Wpisz ilość doświadczenia autobusowego w liczbach"
+                    },
+                    "long_duty": "Dłuższe kursy",
+                    "low_acceleration": "Płynna podróż",
+                    "satisfaction_decrease": "Obsługa premium",
+                    "satisfaction_increase": "Ulubieniec pasażerów",
+                    "tight_schedule": "Wymagające rozkłady",
+                    "title": "Doświadczenie i umiejętności autobusowe"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Zmień status odkrycia wszystkich dealerów w swoim profilu",
                 "label_card": "Odkryj wszystkich dealerów",
@@ -491,6 +513,56 @@
                     "title": "Zmień tablicę rejestracyjną ciężarówki"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Załóż tablicę rejestracyjną dowolnego stanu na ciężarówkę, naczepę lub samochód",
+                "label_card": "Tablice rejestracyjne stanów",
+                "modal": {
+                    "btn_apply": "Zastosuj",
+                    "btn_close": "Zamknij",
+                    "btn_open": "Otwórz",
+                    "btn_random": "Losowy numer",
+                    "current_plate": "Obecna tablica: {plate}",
+                    "description": "Wybierz stan i jeden z jego wzorów tablicy. Tablica zostanie zapisana z tym samym wzorem, którego gra używa dla tego stanu.",
+                    "input_design": {
+                        "label": "Wzór tablicy",
+                        "placeholder": "Wybierz wzór"
+                    },
+                    "input_state": {
+                        "label": "Stan",
+                        "placeholder": "Wybierz stan"
+                    },
+                    "input_text": {
+                        "label": "Tekst tablicy",
+                        "placeholder": "Wpisz tekst"
+                    },
+                    "load_error": "Nie udało się odczytać tablic z tego zapisu",
+                    "loading": "Wczytywanie tablic...",
+                    "no_vehicle": {
+                        "car": "Ten zapis nie ma samochodu",
+                        "trailer": "Ten zapis nie ma naczepy",
+                        "truck": "Ten zapis nie ma ciężarówki"
+                    },
+                    "plate_types": {
+                        "bus": "Autobus",
+                        "car": "Samochód",
+                        "rigid": "Ciężarówka solo",
+                        "trailer": "Naczepa",
+                        "truck": "Ciężarówka",
+                        "truck_city": "Ciężarówka miejska"
+                    },
+                    "preview_front": "Przód",
+                    "preview_note": "Podgląd z prawdziwym tłem i czcionką stanu; w grze tekst może być nieco przesunięty.",
+                    "preview_rear": "Tył",
+                    "target_label": "Pojazd",
+                    "targets": {
+                        "car": "Samochód",
+                        "trailer": "Naczepa",
+                        "truck": "Ciężarówka"
+                    },
+                    "text_help": "Format tego wzoru: {pattern}. Dozwolone: litery, cyfry, spacje i myślniki.",
+                    "title": "Tablice rejestracyjne stanów"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Napraw wszystkie posiadane ciężarówki",
                 "label_card": "Napraw wszystkie ciężarówki",
@@ -563,6 +635,61 @@
                         "message_1": "- Musisz aktywować konsolę i narzędzia deweloperskie aby użyć tej funkcji; możesz to zrobić w ustawieniach (przy wyłączonej grze)",
                         "message_2": "- Aby wygenerować nowe współrzędne, użyj kombinacji klawiszy <b>Alt + F12</b>"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Utwórz zlecenie kurierskie dla swojego samochodu z wybranym startem, celem, paczką i samochodem.",
+                "label_card": "Utwórz trasę samochodem",
+                "modal": {
+                    "title": "Kreator tras samochodem",
+                    "description": "Utwórz zlecenie kurierskie dla swojego samochodu. Pojawi się w dyspozytorni samochodów w grze.",
+                    "btn_open": "Utwórz trasę samochodem",
+                    "btn_close": "Zamknij",
+                    "btn_reload": "Wczytaj ponownie dane zapisu",
+                    "btn_apply": "Utwórz ofertę",
+                    "btn_new_route": "Utwórz kolejną trasę",
+                    "loading_data": "Odczytywanie zleceń samochodowych, firm i samochodów z zapisu...",
+                    "not_available": "Ten zapis nie ma zleceń samochodowych. Potrzebne jest ATS z dostępną jazdą samochodem.",
+                    "step_origin": "Skąd startuje?",
+                    "step_job": "Jakie zlecenie?",
+                    "step_destination": "Dokąd jedzie?",
+                    "step_details": "Samochód i klient",
+                    "origin_city_label": "Miasto startowe",
+                    "origin_company_label": "Firma startowa",
+                    "dest_city_label": "Miasto docelowe",
+                    "dest_company_label": "Firma docelowa",
+                    "filter_discovered_only": "Pokaż tylko odkryte miasta",
+                    "job_label": "Zlecenie",
+                    "cargo_label": "Paczka",
+                    "job_delivery": "Dostawa",
+                    "job_driving": "Przeprowadzenie (tylko jazda samochodem)",
+                    "job_express": "Ekspres",
+                    "show_locked_jobs": "Uwzględnij zlecenia powyżej twojej oceny kuriera",
+                    "locked_job_hint": "Wymaga oceny kuriera {rating}. Gra może jeszcze nie pozwolić go przyjąć.",
+                    "distance_hint": "Typowa odległość tego zlecenia: {min}-{max} km.",
+                    "destination_hint": "Wyświetlane są tylko cele w odległości {min}-{max} km: gra odrzuca oferty spoza zakresu odległości zlecenia.",
+                    "long_route_mode": "Tryb testowy długiej trasy (zezwól na cele poza zakresem zlecenia)",
+                    "long_route_hint": "Prawdziwa trasa ma około {km} km, ale zapisywana jest jako {max} km, aby gra ją pokazała. Wynagrodzenie liczone jest za {max} km.",
+                    "no_destinations": "Żaden cel nie mieści się w zakresie odległości tego zlecenia od startu. Wybierz inne zlecenie lub start.",
+                    "car_label": "Samochód firmowy",
+                    "no_cars": "Żaden samochód firmowy w tym zapisie nie pasuje do tego zlecenia.",
+                    "urgency_label": "Poziom pilności",
+                    "urgency_normal": "Standardowy",
+                    "urgency_urgent": "Pilny",
+                    "urgency_critical": "Krytyczny",
+                    "prio_label": "Klientowi zależy na",
+                    "prio_time": "Czas dostawy",
+                    "prio_cargo_handling": "Obchodzenie się z paczką",
+                    "prio_vehicle_appearance": "Wygląd samochodu",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Wszystkie miejsca w dyspozytorni są zajęte; zostanie zastąpiona oferta, która wygasa najwcześniej.",
+                    "active_job_warning": "Masz aktywne zlecenie samochodowe: ukończ je lub anuluj przed przyjęciem nowej oferty.",
+                    "close_game_note": "Zapisz i zamknij grę przed zastosowaniem. Zmiany pojawią się po ponownym wczytaniu zapisu.",
+                    "success_title": "Trasa samochodem gotowa!",
+                    "next_offer": "Wczytaj ten zapis w grze i otwórz dyspozytornię samochodów: twoje zlecenie zaczyna się w {company}, {city}.",
+                    "error_message": "Nie udało się utworzyć trasy samochodem. Wczytaj dane ponownie i sprawdź, czy zlecenie, samochód i firmy istnieją w tym zapisie."
                 }
             }
         }

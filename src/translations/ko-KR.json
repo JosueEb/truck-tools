@@ -169,6 +169,28 @@
                     "title": "돈 변경"
                 }
             },
+            "bus_skills": {
+                "description_card": "버스 경험치와 기술 변경 (ETS2 1.62+)",
+                "label_card": "버스 경험치와 기술",
+                "modal": {
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_max": "모두 최대",
+                    "btn_open": "열기",
+                    "description": "버스 경험치와 각 버스 기술의 등급(최대 3)을 설정합니다. ETS2 1.62 이상의 세이브가 필요합니다.",
+                    "ecodriving": "친환경 운전",
+                    "input_experience": {
+                        "label": "버스 경험치",
+                        "placeholder": "버스 경험치를 숫자로 입력하세요"
+                    },
+                    "long_duty": "장시간 근무",
+                    "low_acceleration": "부드러운 여정",
+                    "satisfaction_decrease": "프리미엄 서비스",
+                    "satisfaction_increase": "승객들의 인기인",
+                    "tight_schedule": "빡빡한 시간표",
+                    "title": "버스 경험치와 기술"
+                }
+            },
             "dealer_visited": {
                 "description_card": "모든 딜러 상태를 프로필로 설정",
                 "label_card": "모든 딜러 발견",
@@ -491,6 +513,56 @@
                     "title": "트럭 번호판 변경"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "트럭, 트레일러 또는 자동차에 원하는 주의 번호판을 달아 보세요",
+                "label_card": "주별 번호판",
+                "modal": {
+                    "btn_apply": "적용",
+                    "btn_close": "닫기",
+                    "btn_open": "열기",
+                    "btn_random": "무작위 번호",
+                    "current_plate": "현재 번호판: {plate}",
+                    "description": "주와 그 주의 번호판 디자인 중 하나를 선택하세요. 번호판은 게임이 해당 주에 사용하는 디자인 그대로 저장됩니다.",
+                    "input_design": {
+                        "label": "번호판 디자인",
+                        "placeholder": "디자인 선택"
+                    },
+                    "input_state": {
+                        "label": "주",
+                        "placeholder": "주 선택"
+                    },
+                    "input_text": {
+                        "label": "번호판 문자",
+                        "placeholder": "문자 입력"
+                    },
+                    "load_error": "이 세이브의 번호판을 읽을 수 없습니다",
+                    "loading": "번호판 불러오는 중...",
+                    "no_vehicle": {
+                        "car": "이 세이브에는 자동차가 없습니다",
+                        "trailer": "이 세이브에는 트레일러가 없습니다",
+                        "truck": "이 세이브에는 트럭이 없습니다"
+                    },
+                    "plate_types": {
+                        "bus": "버스",
+                        "car": "자동차",
+                        "rigid": "카고 트럭",
+                        "trailer": "트레일러",
+                        "truck": "트럭",
+                        "truck_city": "도시용 트럭"
+                    },
+                    "preview_front": "앞",
+                    "preview_note": "주의 실제 배경과 글꼴로 만든 미리보기입니다. 게임에서는 문자 위치가 조금 다를 수 있습니다.",
+                    "preview_rear": "뒤",
+                    "target_label": "차량",
+                    "targets": {
+                        "car": "자동차",
+                        "trailer": "트레일러",
+                        "truck": "트럭"
+                    },
+                    "text_help": "이 디자인의 형식: {pattern}. 허용: 문자, 숫자, 공백, 하이픈.",
+                    "title": "주별 번호판"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "모든 차량 트럭 수리",
                 "label_card": "모든 트럭 수리하기",
@@ -563,6 +635,61 @@
                         "message_1": "- 이 옵션을 사용하려면 콘솔 모드와 개발자 모드를 활성화해야 합니다; 게임 설정에서 활성화할 수 있습니다 (게임을 종료한 상태)",
                         "message_2": "- 새 좌표를 생성하려면 다음 키 조합을 사용해야 합니다. <b>Alt + F12</b>"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "원하는 출발지, 목적지, 소포, 자동차로 자동차 택배 작업을 만듭니다.",
+                "label_card": "자동차 경로 만들기",
+                "modal": {
+                    "title": "자동차 경로 만들기",
+                    "description": "자동차용 택배 작업을 만듭니다. 게임의 자동차 배차 화면에 나타납니다.",
+                    "btn_open": "자동차 경로 만들기",
+                    "btn_close": "닫기",
+                    "btn_reload": "세이브 데이터 다시 불러오기",
+                    "btn_apply": "제안 만들기",
+                    "btn_new_route": "다른 경로 만들기",
+                    "loading_data": "세이브의 자동차 작업, 회사, 자동차를 읽는 중...",
+                    "not_available": "이 세이브에는 자동차 작업이 없습니다. 자동차 운전이 가능한 ATS가 필요합니다.",
+                    "step_origin": "어디서 출발하나요?",
+                    "step_job": "어떤 작업인가요?",
+                    "step_destination": "어디로 가나요?",
+                    "step_details": "자동차와 고객",
+                    "origin_city_label": "출발 도시",
+                    "origin_company_label": "출발 회사",
+                    "dest_city_label": "도착 도시",
+                    "dest_company_label": "도착 회사",
+                    "filter_discovered_only": "발견한 도시만 표시",
+                    "job_label": "작업",
+                    "cargo_label": "소포",
+                    "job_delivery": "배송",
+                    "job_driving": "차량 이동 (자동차 운전만)",
+                    "job_express": "특급",
+                    "show_locked_jobs": "택배 평점보다 높은 작업 포함",
+                    "locked_job_hint": "택배 평점 {rating}이(가) 필요합니다. 게임에서 아직 수락할 수 없을 수 있습니다.",
+                    "distance_hint": "이 작업의 일반적인 거리: {min}-{max} km.",
+                    "destination_hint": "{min}-{max} km 거리의 목적지만 표시됩니다: 게임은 작업 거리 범위를 벗어난 제안을 삭제합니다.",
+                    "long_route_mode": "장거리 경로 테스트 모드 (작업 범위를 벗어난 목적지 허용)",
+                    "long_route_hint": "실제 경로는 약 {km} km이지만 게임에 표시되도록 {max} km로 저장됩니다. 보수는 {max} km 기준입니다.",
+                    "no_destinations": "출발지에서 이 작업의 거리 범위 안에 있는 목적지가 없습니다. 다른 작업이나 출발지를 선택하세요.",
+                    "car_label": "회사 자동차",
+                    "no_cars": "이 세이브에 이 작업에 맞는 회사 자동차가 없습니다.",
+                    "urgency_label": "긴급도",
+                    "urgency_normal": "일반",
+                    "urgency_urgent": "긴급",
+                    "urgency_critical": "매우 긴급",
+                    "prio_label": "고객이 중요하게 여기는 것",
+                    "prio_time": "배송 시간",
+                    "prio_cargo_handling": "소포 취급",
+                    "prio_vehicle_appearance": "자동차 외관",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "배차 슬롯이 모두 사용 중입니다. 가장 먼저 만료되는 제안이 대체됩니다.",
+                    "active_job_warning": "진행 중인 자동차 작업이 있습니다. 새 제안을 수락하기 전에 완료하거나 취소하세요.",
+                    "close_game_note": "적용하기 전에 게임을 저장하고 종료하세요. 세이브를 다시 불러오면 변경 사항이 나타납니다.",
+                    "success_title": "자동차 경로 준비 완료!",
+                    "next_offer": "게임에서 이 세이브를 불러오고 자동차 배차 화면을 여세요. 작업은 {company}, {city}에서 시작합니다.",
+                    "error_message": "자동차 경로를 만들 수 없습니다. 데이터를 다시 불러오고 작업, 자동차, 회사가 이 세이브에 있는지 확인하세요."
                 }
             }
         }

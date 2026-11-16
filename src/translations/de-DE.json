@@ -169,6 +169,28 @@
                     "title": "Geld hinzufügen"
                 }
             },
+            "bus_skills": {
+                "description_card": "Bus-Erfahrung und -Fähigkeiten ändern (ETS2 1.62+)",
+                "label_card": "Bus-Erfahrung und -Fähigkeiten",
+                "modal": {
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_max": "Alles maximieren",
+                    "btn_open": "Öffnen",
+                    "description": "Lege die Bus-Erfahrung und die Stufe jeder Bus-Fähigkeit fest (maximal 3). Benötigt einen Spielstand aus ETS2 1.62 oder neuer.",
+                    "ecodriving": "Sparsames Fahren",
+                    "input_experience": {
+                        "label": "Bus-Erfahrung",
+                        "placeholder": "Gib die Menge an Bus-Erfahrung als Zahl ein"
+                    },
+                    "long_duty": "Längere Schichten",
+                    "low_acceleration": "Sanfte Fahrt",
+                    "satisfaction_decrease": "Premium-Service",
+                    "satisfaction_increase": "Liebling der Fahrgäste",
+                    "tight_schedule": "Anspruchsvolle Fahrpläne",
+                    "title": "Bus-Erfahrung und -Fähigkeiten"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Besuchte Händler ändern",
                 "label_card": "Entdecken Sie alle Händler",
@@ -491,6 +513,56 @@
                     "title": "Kennzeichen ändern"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Bring ein Kennzeichen eines beliebigen Bundesstaats an deinem Lkw, Anhänger oder Auto an",
+                "label_card": "Kennzeichen der Bundesstaaten",
+                "modal": {
+                    "btn_apply": "Übernehmen",
+                    "btn_close": "Schließen",
+                    "btn_open": "Öffnen",
+                    "btn_random": "Zufällige Nummer",
+                    "current_plate": "Aktuelles Kennzeichen: {plate}",
+                    "description": "Wähle einen Bundesstaat und eines seiner Kennzeichen-Designs. Das Kennzeichen wird mit demselben Design gespeichert, das das Spiel für diesen Bundesstaat verwendet.",
+                    "input_design": {
+                        "label": "Kennzeichen-Design",
+                        "placeholder": "Design auswählen"
+                    },
+                    "input_state": {
+                        "label": "Bundesstaat",
+                        "placeholder": "Bundesstaat auswählen"
+                    },
+                    "input_text": {
+                        "label": "Kennzeichentext",
+                        "placeholder": "Text eingeben"
+                    },
+                    "load_error": "Die Kennzeichen dieses Spielstands konnten nicht gelesen werden",
+                    "loading": "Kennzeichen werden geladen...",
+                    "no_vehicle": {
+                        "car": "Dieser Spielstand hat kein Auto",
+                        "trailer": "Dieser Spielstand hat keinen Anhänger",
+                        "truck": "Dieser Spielstand hat keinen Lkw"
+                    },
+                    "plate_types": {
+                        "bus": "Bus",
+                        "car": "Auto",
+                        "rigid": "Solo-Lkw",
+                        "trailer": "Anhänger",
+                        "truck": "Lkw",
+                        "truck_city": "Stadt-Lkw"
+                    },
+                    "preview_front": "Vorne",
+                    "preview_note": "Vorschau mit echtem Hintergrund und echter Schrift des Bundesstaats; im Spiel kann der Text etwas anders sitzen.",
+                    "preview_rear": "Hinten",
+                    "target_label": "Fahrzeug",
+                    "targets": {
+                        "car": "Auto",
+                        "trailer": "Anhänger",
+                        "truck": "Lkw"
+                    },
+                    "text_help": "Format dieses Designs: {pattern}. Erlaubt: Buchstaben, Zahlen, Leerzeichen und Bindestriche.",
+                    "title": "Kennzeichen der Bundesstaaten"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Reparieren Sie alle beschädigten Lkw",
                 "label_card": "Alle Lkw reparieren",
@@ -563,6 +635,61 @@
                         "message_1": "- Du musst die Konsole und den Entwickler Modus aktivieren um diese Option zu nutzen; Dies kannst du in den Einstellungen machen (bei geschlossenem Spiel)",
                         "message_2": "- Um neue Koordinaten zu generieren, musst du folgende Tastenkombination nutzen: <b>Alt + F12</b>"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Erstelle einen Kurierauftrag für dein Auto mit Start, Ziel, Paket und Auto deiner Wahl.",
+                "label_card": "Autoroute erstellen",
+                "modal": {
+                    "title": "Autoroute erstellen",
+                    "description": "Erstelle einen Kurierauftrag für dein Auto. Er erscheint in der Auto-Disposition des Spiels.",
+                    "btn_open": "Autoroute erstellen",
+                    "btn_close": "Schließen",
+                    "btn_reload": "Spielstanddaten neu laden",
+                    "btn_apply": "Angebot erstellen",
+                    "btn_new_route": "Weitere Route erstellen",
+                    "loading_data": "Autoaufträge, Firmen und Autos des Spielstands werden gelesen...",
+                    "not_available": "Dieser Spielstand hat keine Autoaufträge. Dafür wird ATS mit verfügbarem Autofahren benötigt.",
+                    "step_origin": "Wo beginnt er?",
+                    "step_job": "Welcher Auftrag?",
+                    "step_destination": "Wohin geht es?",
+                    "step_details": "Auto und Kunde",
+                    "origin_city_label": "Startstadt",
+                    "origin_company_label": "Startfirma",
+                    "dest_city_label": "Zielstadt",
+                    "dest_company_label": "Zielfirma",
+                    "filter_discovered_only": "Nur entdeckte Städte anzeigen",
+                    "job_label": "Auftrag",
+                    "cargo_label": "Paket",
+                    "job_delivery": "Lieferung",
+                    "job_driving": "Überführung (nur das Auto fahren)",
+                    "job_express": "Express",
+                    "show_locked_jobs": "Aufträge über deiner Kurierbewertung einbeziehen",
+                    "locked_job_hint": "Benötigt Kurierbewertung {rating}. Das Spiel lässt dich ihn eventuell noch nicht annehmen.",
+                    "distance_hint": "Übliche Entfernung für diesen Auftrag: {min}-{max} km.",
+                    "destination_hint": "Es werden nur Ziele in {min}-{max} km Entfernung angezeigt: Das Spiel verwirft Angebote außerhalb der Entfernung des Auftrags.",
+                    "long_route_mode": "Testmodus für lange Routen (Ziele außerhalb der Auftragsentfernung erlauben)",
+                    "long_route_hint": "Die echte Route ist etwa {km} km lang, wird aber als {max} km gespeichert, damit das Spiel sie anzeigt. Die Bezahlung basiert auf {max} km.",
+                    "no_destinations": "Kein Ziel liegt in der Entfernung dieses Auftrags vom Start. Wähle einen anderen Auftrag oder Start.",
+                    "car_label": "Firmenauto",
+                    "no_cars": "Kein Firmenauto in diesem Spielstand passt zu diesem Auftrag.",
+                    "urgency_label": "Dringlichkeit",
+                    "urgency_normal": "Standard",
+                    "urgency_urgent": "Dringend",
+                    "urgency_critical": "Kritisch",
+                    "prio_label": "Dem Kunden ist wichtig",
+                    "prio_time": "Lieferzeit",
+                    "prio_cargo_handling": "Umgang mit dem Paket",
+                    "prio_vehicle_appearance": "Zustand des Autos",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Alle Plätze der Disposition sind belegt; das Angebot, das zuerst abläuft, wird ersetzt.",
+                    "active_job_warning": "Du hast einen aktiven Autoauftrag: Schließe ihn ab oder brich ihn ab, bevor du das neue Angebot annimmst.",
+                    "close_game_note": "Speichere und schließe das Spiel vor dem Übernehmen. Die Änderungen erscheinen, wenn du den Spielstand erneut lädst.",
+                    "success_title": "Autoroute bereit!",
+                    "next_offer": "Lade diesen Spielstand im Spiel und öffne die Auto-Disposition: Dein Auftrag beginnt bei {company}, {city}.",
+                    "error_message": "Die Autoroute konnte nicht erstellt werden. Lade die Daten neu und prüfe, ob Auftrag, Auto und Firmen in diesem Spielstand existieren."
                 }
             }
         }

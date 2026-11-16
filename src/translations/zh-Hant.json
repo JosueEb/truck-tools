@@ -169,6 +169,28 @@
                     "title": "修改金幣數量"
                 }
             },
+            "bus_skills": {
+                "description_card": "修改巴士經驗值和技能 (ETS2 1.62+)",
+                "label_card": "巴士經驗值和技能",
+                "modal": {
+                    "btn_apply": "應用",
+                    "btn_close": "關閉",
+                    "btn_max": "全部最大",
+                    "btn_open": "開啟",
+                    "description": "設定巴士經驗值和每項巴士技能的等級(最高 3 級)。需要 ETS2 1.62 或更新版本的存檔。",
+                    "ecodriving": "節能駕駛",
+                    "input_experience": {
+                        "label": "巴士經驗值",
+                        "placeholder": "請以數字輸入巴士經驗值"
+                    },
+                    "long_duty": "更長班次",
+                    "low_acceleration": "平穩旅程",
+                    "satisfaction_decrease": "優質服務",
+                    "satisfaction_increase": "乘客最愛",
+                    "tight_schedule": "緊湊時刻表",
+                    "title": "巴士經驗值和技能"
+                }
+            },
             "dealer_visited": {
                 "description_card": "修改卡車經銷商解鎖狀態",
                 "label_card": "解鎖所有卡車經銷商",
@@ -365,24 +387,24 @@
                 }
             },
             "change_trailer": {
-				"description_card": "Change your trailer without going to the garage",
-				"label_card": "Change Trailer on road",
-				"modal": {
-					"btn_apply": "Change",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Change your trailer without going to the garage",
-					"title": "Change your trailer on the road",			
-					"select_label": "Trailers",	
-					"select_error": "Trailers not found",	
-					"select_placeholder": "Select a trailer",
-					"warning_message": {
-						"title": "Warning",
-						"message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
-					}
-				}
-			}
+                "description_card": "Change your trailer without going to the garage",
+                "label_card": "Change Trailer on road",
+                "modal": {
+                    "btn_apply": "Change",
+                    "btn_how_to_use": "How to use",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "description": "Change your trailer without going to the garage",
+                    "title": "Change your trailer on the road",
+                    "select_label": "Trailers",
+                    "select_error": "Trailers not found",
+                    "select_placeholder": "Select a trailer",
+                    "warning_message": {
+                        "title": "Warning",
+                        "message": "If you created a new save, remember to update the list of trailers so you don't get an error when changing trailers."
+                    }
+                }
+            }
         },
         "trucks": {
             "change_truck_engine": {
@@ -491,6 +513,56 @@
                     "title": "修改卡車車牌"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "為你的卡車、掛車或汽車掛上任意州的車牌",
+                "label_card": "各州車牌",
+                "modal": {
+                    "btn_apply": "應用",
+                    "btn_close": "關閉",
+                    "btn_open": "開啟",
+                    "btn_random": "隨機號碼",
+                    "current_plate": "目前車牌:{plate}",
+                    "description": "選擇一個州及其車牌樣式之一。車牌會以遊戲在該州使用的相同樣式儲存。",
+                    "input_design": {
+                        "label": "車牌樣式",
+                        "placeholder": "選擇樣式"
+                    },
+                    "input_state": {
+                        "label": "州",
+                        "placeholder": "選擇州"
+                    },
+                    "input_text": {
+                        "label": "車牌文字",
+                        "placeholder": "輸入文字"
+                    },
+                    "load_error": "無法讀取此存檔的車牌",
+                    "loading": "正在載入車牌...",
+                    "no_vehicle": {
+                        "car": "此存檔沒有汽車",
+                        "trailer": "此存檔沒有掛車",
+                        "truck": "此存檔沒有卡車"
+                    },
+                    "plate_types": {
+                        "bus": "巴士",
+                        "car": "汽車",
+                        "rigid": "廂式卡車",
+                        "trailer": "掛車",
+                        "truck": "卡車",
+                        "truck_city": "城市卡車"
+                    },
+                    "preview_front": "前",
+                    "preview_note": "使用該州真實背景和字型的預覽;遊戲中文字位置可能略有不同。",
+                    "preview_rear": "後",
+                    "target_label": "車輛",
+                    "targets": {
+                        "car": "汽車",
+                        "trailer": "掛車",
+                        "truck": "卡車"
+                    },
+                    "text_help": "此樣式的格式:{pattern}。允許:字母、數字、空格和連字號。",
+                    "title": "各州車牌"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "修理你所擁有的所有卡車",
                 "label_card": "修理所有卡車",
@@ -549,22 +621,77 @@
                 }
             },
             "teleport_player": {
-				"description_card": "Teleport to a location using the game debug camera",
-				"label_card": "Teleport player position",
-				"modal": {
-					"btn_apply": "Teleport",
-					"btn_how_to_use": "How to use",
-					"btn_close": "Close",
-					"btn_open": "Open",
-					"description": "Teleport to a location using the game debug camera",
-					"title": "Teleport player position",			
-					"warning_message": {
-						"title": "Remember",
-						"message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
-						"message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
-					}
-				}
-			}
+                "description_card": "Teleport to a location using the game debug camera",
+                "label_card": "Teleport player position",
+                "modal": {
+                    "btn_apply": "Teleport",
+                    "btn_how_to_use": "How to use",
+                    "btn_close": "Close",
+                    "btn_open": "Open",
+                    "description": "Teleport to a location using the game debug camera",
+                    "title": "Teleport player position",
+                    "warning_message": {
+                        "title": "Remember",
+                        "message_1": "- You need to enable the console and developer mode to use this option; you can do this in the settings (with the game closed)",
+                        "message_2": "- To generate new coordinates, you need to use the following key combination: <b>Alt + F12</b>"
+                    }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "用你想要的起點、終點、包裹和汽車,為你的汽車建立一個快遞任務。",
+                "label_card": "建立汽車路線",
+                "modal": {
+                    "title": "汽車路線建立器",
+                    "description": "為你的汽車建立一個快遞任務。它會出現在遊戲的汽車調度中。",
+                    "btn_open": "建立汽車路線",
+                    "btn_close": "關閉",
+                    "btn_reload": "重新讀取存檔資料",
+                    "btn_apply": "建立任務",
+                    "btn_new_route": "再建立一條路線",
+                    "loading_data": "正在讀取存檔中的汽車任務、公司和汽車...",
+                    "not_available": "此存檔沒有汽車任務。需要可駕駛汽車的 ATS。",
+                    "step_origin": "從哪裡出發?",
+                    "step_job": "是什麼任務?",
+                    "step_destination": "要去哪裡?",
+                    "step_details": "汽車和客戶",
+                    "origin_city_label": "出發城市",
+                    "origin_company_label": "出發公司",
+                    "dest_city_label": "目的城市",
+                    "dest_company_label": "目的公司",
+                    "filter_discovered_only": "僅顯示已發現的城市",
+                    "job_label": "任務",
+                    "cargo_label": "包裹",
+                    "job_delivery": "配送",
+                    "job_driving": "代駕 (只駕駛汽車)",
+                    "job_express": "特快",
+                    "show_locked_jobs": "包含高於你快遞評分的任務",
+                    "locked_job_hint": "需要快遞評分 {rating}。遊戲可能暫時不允許你接受。",
+                    "distance_hint": "此任務的常見距離:{min}-{max} km。",
+                    "destination_hint": "只列出 {min}-{max} km 內的目的地:遊戲會丟棄超出任務距離範圍的任務。",
+                    "long_route_mode": "長路線測試模式 (允許超出任務範圍的目的地)",
+                    "long_route_hint": "實際路線約 {km} km,但會儲存為 {max} km 以便遊戲顯示。報酬按 {max} km 計算。",
+                    "no_destinations": "從起點出發,沒有目的地在此任務的距離範圍內。請選擇其他任務或起點。",
+                    "car_label": "公司汽車",
+                    "no_cars": "此存檔中沒有適合此任務的公司汽車。",
+                    "urgency_label": "緊急程度",
+                    "urgency_normal": "標準",
+                    "urgency_urgent": "緊急",
+                    "urgency_critical": "非常緊急",
+                    "prio_label": "客戶在意",
+                    "prio_time": "配送時間",
+                    "prio_cargo_handling": "包裹處理",
+                    "prio_vehicle_appearance": "汽車外觀",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "所有調度位都已佔用;最早過期的任務將被替換。",
+                    "active_job_warning": "你有一個進行中的汽車任務:請先完成或取消,再接受新任務。",
+                    "close_game_note": "應用前請儲存並關閉遊戲。重新載入存檔後即可看到變更。",
+                    "success_title": "汽車路線已就緒!",
+                    "next_offer": "在遊戲中載入此存檔並開啟汽車調度:你的任務從 {city} 的 {company} 開始。",
+                    "error_message": "無法建立汽車路線。請重新讀取資料,並檢查任務、汽車和公司是否存在於此存檔中。"
+                }
+            }
         }
     }
 }

@@ -169,6 +169,28 @@
                     "title": "changer l'argent"
                 }
             },
+            "bus_skills": {
+                "description_card": "Modifier l'expérience et les compétences de bus (ETS2 1.62+)",
+                "label_card": "Expérience et compétences de bus",
+                "modal": {
+                    "btn_apply": "Appliquer",
+                    "btn_close": "Fermer",
+                    "btn_max": "Tout au maximum",
+                    "btn_open": "Ouvrir",
+                    "description": "Définissez l'expérience de bus et le niveau de chaque compétence de bus (3 maximum). Nécessite une sauvegarde d'ETS2 1.62 ou plus récente.",
+                    "ecodriving": "Écoconduite",
+                    "input_experience": {
+                        "label": "Expérience de bus",
+                        "placeholder": "Saisissez la quantité d'expérience de bus en chiffres"
+                    },
+                    "long_duty": "Services plus longs",
+                    "low_acceleration": "Trajet en douceur",
+                    "satisfaction_decrease": "Service premium",
+                    "satisfaction_increase": "Chouchou des passagers",
+                    "tight_schedule": "Horaires exigeants",
+                    "title": "Expérience et compétences de bus"
+                }
+            },
             "dealer_visited": {
                 "description_card": "Définissez tous les statuts de concessionnaire sur votre profil",
                 "label_card": "Découvrez tous les concessionnaires",
@@ -491,6 +513,56 @@
                     "title": "Changement de plaque d'immatriculation d'un camion"
                 }
             },
+            "license_plate_ats": {
+                "description_card": "Mettez une plaque de n'importe quel État sur votre camion, remorque ou voiture",
+                "label_card": "Plaques des États",
+                "modal": {
+                    "btn_apply": "Appliquer",
+                    "btn_close": "Fermer",
+                    "btn_open": "Ouvrir",
+                    "btn_random": "Numéro aléatoire",
+                    "current_plate": "Plaque actuelle : {plate}",
+                    "description": "Choisissez un État et l'un de ses modèles de plaque. La plaque est enregistrée avec le même modèle que le jeu utilise pour cet État.",
+                    "input_design": {
+                        "label": "Modèle de plaque",
+                        "placeholder": "Sélectionnez un modèle"
+                    },
+                    "input_state": {
+                        "label": "État",
+                        "placeholder": "Sélectionnez un État"
+                    },
+                    "input_text": {
+                        "label": "Texte de la plaque",
+                        "placeholder": "Saisissez le texte"
+                    },
+                    "load_error": "Impossible de lire les plaques de cette sauvegarde",
+                    "loading": "Chargement des plaques...",
+                    "no_vehicle": {
+                        "car": "Cette sauvegarde n'a pas de voiture",
+                        "trailer": "Cette sauvegarde n'a pas de remorque",
+                        "truck": "Cette sauvegarde n'a pas de camion"
+                    },
+                    "plate_types": {
+                        "bus": "Bus",
+                        "car": "Voiture",
+                        "rigid": "Porteur",
+                        "trailer": "Remorque",
+                        "truck": "Camion",
+                        "truck_city": "Camion urbain"
+                    },
+                    "preview_front": "Avant",
+                    "preview_note": "Aperçu avec le fond et la police réels de l'État ; en jeu, le texte peut être légèrement décalé.",
+                    "preview_rear": "Arrière",
+                    "target_label": "Véhicule",
+                    "targets": {
+                        "car": "Voiture",
+                        "trailer": "Remorque",
+                        "truck": "Camion"
+                    },
+                    "text_help": "Format de ce modèle : {pattern}. Autorisés : lettres, chiffres, espaces et tirets.",
+                    "title": "Plaques des États"
+                }
+            },
             "repair_all_trucks": {
                 "description_card": "Réparation de tous les camions de la flotte",
                 "label_card": "Réparer tous les camions",
@@ -563,6 +635,61 @@
                         "message_1": "- Vous devez activer le mode console et développeur pour utiliser cette option; vous pouvez le faire dans les paramètres (avec le jeu fermé)",
                         "message_2": "- Pour générer de nouvelles coordonnées, vous devez utiliser la combinaison de touches suivante : <b>Alt + F12</b>"
                     }
+                }
+            }
+        },
+        "routes": {
+            "create_car_route": {
+                "description_card": "Créez une mission de coursier pour votre voiture avec l'origine, la destination, le colis et la voiture de votre choix.",
+                "label_card": "Créer un itinéraire en voiture",
+                "modal": {
+                    "title": "Créateur d'itinéraires en voiture",
+                    "description": "Créez une mission de coursier pour votre voiture. Elle apparaît dans le répartiteur de voitures du jeu.",
+                    "btn_open": "Créer un itinéraire en voiture",
+                    "btn_close": "Fermer",
+                    "btn_reload": "Recharger les données de la sauvegarde",
+                    "btn_apply": "Créer l'offre",
+                    "btn_new_route": "Créer un autre itinéraire",
+                    "loading_data": "Lecture des missions en voiture, des entreprises et des voitures de la sauvegarde...",
+                    "not_available": "Cette sauvegarde n'a aucune mission en voiture. Il faut ATS avec la conduite de voitures disponible.",
+                    "step_origin": "D'où part-elle ?",
+                    "step_job": "Quelle est la mission ?",
+                    "step_destination": "Où va-t-elle ?",
+                    "step_details": "Voiture et client",
+                    "origin_city_label": "Ville de départ",
+                    "origin_company_label": "Entreprise de départ",
+                    "dest_city_label": "Ville de destination",
+                    "dest_company_label": "Entreprise de destination",
+                    "filter_discovered_only": "Afficher uniquement les villes découvertes",
+                    "job_label": "Mission",
+                    "cargo_label": "Colis",
+                    "job_delivery": "Livraison",
+                    "job_driving": "Convoyage (conduire la voiture uniquement)",
+                    "job_express": "Express",
+                    "show_locked_jobs": "Inclure les missions au-dessus de votre note de coursier",
+                    "locked_job_hint": "Nécessite une note de coursier de {rating}. Le jeu peut ne pas encore vous laisser l'accepter.",
+                    "distance_hint": "Distance habituelle de cette mission : {min}-{max} km.",
+                    "destination_hint": "Seules les destinations à {min}-{max} km sont listées : le jeu ignore les offres hors de la plage de distance de la mission.",
+                    "long_route_mode": "Mode test d'itinéraire long (autoriser les destinations hors de la plage de la mission)",
+                    "long_route_hint": "L'itinéraire réel fait environ {km} km, mais il est enregistré à {max} km pour que le jeu l'affiche. La rémunération est basée sur {max} km.",
+                    "no_destinations": "Aucune destination n'est dans la plage de distance de cette mission depuis l'origine. Choisissez une autre mission ou origine.",
+                    "car_label": "Voiture de l'entreprise",
+                    "no_cars": "Aucune voiture d'entreprise de cette sauvegarde ne convient à cette mission.",
+                    "urgency_label": "Niveau d'urgence",
+                    "urgency_normal": "Standard",
+                    "urgency_urgent": "Urgent",
+                    "urgency_critical": "Critique",
+                    "prio_label": "Le client tient à",
+                    "prio_time": "Délai de livraison",
+                    "prio_cargo_handling": "Manipulation du colis",
+                    "prio_vehicle_appearance": "Apparence de la voiture",
+                    "distance_estimate": "≈ {km} km",
+                    "no_free_slots": "Tous les emplacements du répartiteur sont utilisés ; l'offre qui expire en premier sera remplacée.",
+                    "active_job_warning": "Vous avez une mission en voiture en cours : terminez-la ou annulez-la avant d'accepter la nouvelle offre.",
+                    "close_game_note": "Sauvegardez et fermez le jeu avant d'appliquer. Les changements apparaissent quand vous rechargez la sauvegarde.",
+                    "success_title": "Itinéraire en voiture prêt !",
+                    "next_offer": "Chargez cette sauvegarde dans le jeu et ouvrez le répartiteur de voitures : votre mission commence chez {company}, {city}.",
+                    "error_message": "Impossible de créer l'itinéraire en voiture. Rechargez les données et vérifiez que la mission, la voiture et les entreprises existent dans cette sauvegarde."
                 }
             }
         }
