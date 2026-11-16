@@ -18,6 +18,7 @@ import {
 } from "@heroui/modal";
 import AlertSave from "@/components/AlertSave";
 import Warning from "@/components/Warning";
+import Step from "@/routes/pages/RoutesOptions/RouteStep";
 
 // Hooks
 import { ProfileContex } from "@/hooks/useProfileContex";
@@ -30,6 +31,7 @@ import {
 } from "@/utils/fileEdit";
 import { formatCityName, getCityCountryOrState } from "@/utils/citiesData";
 import { formatCompanyName } from "@/utils/companiesData";
+import { estimateRoadKm } from "@/utils/routeDistance";
 import classNames from "classnames";
 
 // Icons
@@ -57,13 +59,6 @@ import {
 	RouteStartMode,
 } from "@/types/fileEditTypes";
 
-interface StepProps {
-	number: number;
-	icon: ReactNode;
-	title: string;
-	children: ReactNode;
-}
-
 interface StartOptionProps {
 	icon: ReactNode;
 	title: string;
@@ -73,24 +68,7 @@ interface StartOptionProps {
 	onSelect: () => void;
 }
 
-// Median ratio between offers' road distance and map distance, in both games.
-const ROAD_KM_PER_MAP_KM = 25;
 const FALLBACK_DISTANCE_KM = 450;
-
-const Step = ({ number, icon, title, children }: StepProps) => (
-	<section className="flex gap-3">
-		<div className="bg-primary/15 text-primary flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold">
-			{number}
-		</div>
-		<div className="flex min-w-0 flex-1 flex-col gap-3">
-			<h3 className="flex h-7 items-center gap-2 font-semibold">
-				{icon}
-				{title}
-			</h3>
-			{children}
-		</div>
-	</section>
-);
 
 const StartOption = ({
 	icon,
@@ -285,19 +263,7 @@ const CreateRouteModal = () => {
 	const destPosition =
 		routeData?.positions[`${effectiveDestCompany}.${effectiveDestCity}`];
 	const distanceKm =
-		originPosition && destPosition
-			? Math.max(
-					Math.round(
-						(Math.hypot(
-							originPosition[0] - destPosition[0],
-							originPosition[1] - destPosition[1]
-						) /
-							1000) *
-							ROAD_KM_PER_MAP_KM
-					),
-					1
-				)
-			: FALLBACK_DISTANCE_KM;
+		estimateRoadKm(originPosition, destPosition) ?? FALLBACK_DISTANCE_KM;
 
 	// Trailer: chosen for the player, editable in the advanced options.
 	const cargoTrailers: TrailerDefinitionOption[] =

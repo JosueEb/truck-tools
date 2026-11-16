@@ -196,8 +196,65 @@ export interface MenuOptions {
 export interface Routes {
 	tab_title: string;
 	create_route: CreateRouteCard;
+	create_car_route: CreateCarRouteCard;
 	convoy_share: ConvoyShareCard;
 	cancel_job: CancelJobCard;
+}
+
+export interface CreateCarRouteCard {
+	description_card: string;
+	label_card: string;
+	modal: CreateCarRouteModalTrans;
+}
+
+export interface CreateCarRouteModalTrans {
+	active_job_warning: string;
+	btn_apply: string;
+	btn_close: string;
+	btn_new_route: string;
+	btn_open: string;
+	btn_reload: string;
+	car_label: string;
+	cargo_label: string;
+	close_game_note: string;
+	description: string;
+	dest_city_label: string;
+	dest_company_label: string;
+	distance_estimate: string;
+	destination_hint: string;
+	distance_hint: string;
+	long_route_hint: string;
+	long_route_mode: string;
+	no_destinations: string;
+	error_message: string;
+	filter_discovered_only: string;
+	job_delivery: string;
+	job_driving: string;
+	job_express: string;
+	job_label: string;
+	loading_data: string;
+	locked_job_hint: string;
+	next_offer: string;
+	no_cars: string;
+	no_free_slots: string;
+	not_available: string;
+	origin_city_label: string;
+	origin_company_label: string;
+	prio_cargo_handling: string;
+	prio_label: string;
+	prio_time: string;
+	prio_vehicle_appearance: string;
+	show_locked_jobs: string;
+	step_destination: string;
+	step_details: string;
+	step_job: string;
+	step_origin: string;
+	success_title: string;
+	title: string;
+	urgency_critical: string;
+	urgency_label: string;
+	urgency_normal: string;
+	urgency_urgent: string;
 }
 
 export interface CreateRouteCard {

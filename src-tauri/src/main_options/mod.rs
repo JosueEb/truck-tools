@@ -1,4 +1,5 @@
 pub mod accessories;
+pub mod car_routes;
 pub mod license_plate;
 pub mod profiles;
 pub mod routes;

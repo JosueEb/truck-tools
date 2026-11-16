@@ -17,7 +17,10 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
 	)) as TranslationsTypes;
 
 	// New sections fall back to English until they are translated in Weblate
-	if (res_lags.menu_options.routes && res_lags.menu_options.profile.bus_skills)
+	if (
+		res_lags.menu_options.routes?.create_car_route &&
+		res_lags.menu_options.profile.bus_skills
+	)
 		return res_lags;
 
 	const english =
@@ -27,7 +30,10 @@ const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
 		...res_lags,
 		menu_options: {
 			...res_lags.menu_options,
-			routes: res_lags.menu_options.routes ?? english.menu_options.routes,
+			routes: {
+				...english.menu_options.routes,
+				...res_lags.menu_options.routes,
+			},
 			profile: {
 				...res_lags.menu_options.profile,
 				bus_skills:

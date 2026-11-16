@@ -140,6 +140,67 @@ export interface CatalogCity {
 	region: string;
 }
 
+export interface CarCatalogJob {
+	name: string;
+	cargos: string[];
+	vehicle_types: string[];
+	express: boolean;
+	distance: [number, number];
+	rating: number;
+}
+
+export interface CarCatalogCargo {
+	name: string;
+	fragility: number;
+}
+
+export interface CarCatalogModel {
+	name: string;
+	types: string[];
+}
+
+export interface CurrentCarJobInfo {
+	job: string;
+	cargo: string | null;
+	source_city: string;
+	source_company: string;
+	target_city: string;
+	target_company: string;
+	distance_km: number;
+}
+
+export interface ResponseSaveCarRouteData extends responseRustTypes {
+	visited_cities: string[];
+	companies_by_city: CityCompany[];
+	cars: string[];
+	courier_rating: number;
+	free_slots: number;
+	current_car_job: CurrentCarJobInfo | null;
+	jobs: Record<string, CarCatalogJob>;
+	cargos: Record<string, CarCatalogCargo>;
+	models: Record<string, CarCatalogModel>;
+	companies: Record<string, CatalogCompany>;
+	cities: Record<string, CatalogCity>;
+	positions: Record<string, [number, number]>;
+}
+
+export interface CarRoutePayload {
+	source_city: string;
+	source_company: string;
+	target_city: string;
+	target_company: string;
+	job: string;
+	cargo: string | null;
+	company_car: string;
+	distance_km: number;
+	urgency: number;
+	prio_cargo_handling: boolean;
+	prio_time: boolean;
+	prio_vehicle_appearance: boolean;
+	long_route_test: boolean;
+	game?: string;
+}
+
 export type RouteStartMode = "offer" | "teleport" | "take_now";
 
 export interface CustomRoutePayload {
@@ -158,4 +219,3 @@ export interface CustomRoutePayload {
 	start_mode?: RouteStartMode;
 	game?: string;
 }
-

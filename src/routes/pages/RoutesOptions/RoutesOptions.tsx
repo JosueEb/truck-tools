@@ -5,6 +5,7 @@ import OptionCard from "@/components/OptionCard";
 
 // Modals
 import CreateRouteModal from "@/routes/pages/RoutesOptions/Modals/CreateRouteModal";
+import CreateCarRouteModal from "@/routes/pages/RoutesOptions/Modals/CreateCarRouteModal";
 import ConvoyRouteModal from "@/routes/pages/RoutesOptions/Modals/ConvoyRouteModal";
 import CancelJobModal from "@/routes/pages/RoutesOptions/Modals/CancelJobModal";
 
@@ -37,6 +38,19 @@ const RoutesOptions = () => {
 			modal: <CreateRouteModal />,
 			disable: false,
 		},
+		// Car jobs only exist in ATS.
+		...(game === "ats"
+			? [
+					{
+						id: "4",
+						title: routes.create_car_route.label_card,
+						description: routes.create_car_route.description_card,
+						image: img21_ats,
+						modal: <CreateCarRouteModal />,
+						disable: false,
+					},
+				]
+			: []),
 		{
 			id: "2",
 			title: routes.convoy_share.label_card,

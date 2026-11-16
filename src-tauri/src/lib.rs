@@ -27,6 +27,8 @@ use std::path::Path;
 
 use main_options::routes::{cancel_current_job as cancel_job_backend, get_route_catalog, get_save_game_route_data as get_route_data_backend, start_route as start_route_backend};
 use structs::vec_routes::{CustomRoutePayload, SaveRouteDataResponse};
+use main_options::car_routes::{get_save_car_route_data as get_car_route_data_backend, set_custom_car_route as set_car_route_backend};
+use structs::vec_car_routes::{CarRoutePayload, SaveCarRouteDataResponse};
 use structs::bus_experience_skills::BusExperienceSkills;
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
@@ -1197,6 +1199,43 @@ async fn set_custom_route(
 }
 
 #[tauri::command]
+async fn get_save_car_route_data(
+    dir_save: &str,
+    game: &str,
+) -> Result<SaveCarRouteDataResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(SaveCarRouteDataResponse::failed()),
+    };
+
+    return Ok(get_car_route_data_backend(&file, game));
+}
+
+#[tauri::command]
+async fn set_custom_car_route(
+    dir_save: &str,
+    route_data: CarRoutePayload,
+    game: &str,
+) -> Result<DefaultResponse, ()> {
+    if route_data.game.as_deref().is_some_and(|value| value != game) {
+        return Ok(DefaultResponse { res: false });
+    }
+
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let modified_file = match set_car_route_backend(&file, &route_data, game) {
+        Some(modified) => modified,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res = save_file(dir_save.to_string(), modified_file).await;
+    return Ok(DefaultResponse { res });
+}
+
+#[tauri::command]
 async fn cancel_current_job(dir_save: &str) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
@@ -1270,6 +1309,8 @@ pub fn run() {
             get_save_game_route_data,
             set_custom_route,
             cancel_current_job,
+            get_save_car_route_data,
+            set_custom_car_route,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

@@ -1,5 +1,6 @@
 pub mod accessories_strucs;
 pub mod bus_experience_skills;
+pub mod vec_car_routes;
 pub mod experience_skills;
 pub mod file_path;
 pub mod responses;

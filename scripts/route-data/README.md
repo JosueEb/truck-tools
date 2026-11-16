@@ -31,3 +31,15 @@ python gen_route_data.py . <repo root>
 
 Only the base maps and official DLCs are covered, so companies from map mods have no placements.
 Generated from ATS 1.61.3.18 and ETS2 1.61.1.9.
+
+## Car job catalog (ATS)
+
+`src-tauri/src/embeds/car_catalog_ats.json` holds the car jobs (cargos, accepted vehicle
+types, distance range, required courier rating), the package names and the drivable car
+models. It reads the installed game directly, with no parser needed:
+
+```bash
+python gen_car_data.py "<ATS install dir>" <repo root>
+```
+
+Add a DLC to `CAR_ARCHIVES` in the script when it brings new drivable cars.

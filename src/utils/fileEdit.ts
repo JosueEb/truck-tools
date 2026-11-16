@@ -33,6 +33,8 @@ import {
 	ResponseSaveCameraPositions,
 	ResponseSaveGameRouteData,
 	CustomRoutePayload,
+	ResponseSaveCarRouteData,
+	CarRoutePayload,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -1060,6 +1062,46 @@ export const setCustomRoute = async (
 		};
 		const invokeRes = (await invoke(
 			"set_custom_route",
+			rustParams
+		)) as responseRustTypes;
+
+		return invokeRes.res;
+	} catch {
+		return false;
+	}
+};
+
+export const getSaveCarRouteData = async (
+	dirSave: string,
+	game: GamesNames
+): Promise<ResponseSaveCarRouteData | null> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+			game,
+		};
+		return (await invoke(
+			"get_save_car_route_data",
+			rustParams
+		)) as ResponseSaveCarRouteData;
+	} catch {
+		return null;
+	}
+};
+
+export const setCustomCarRoute = async (
+	dirSave: string,
+	routeData: CarRoutePayload,
+	game: GamesNames
+): Promise<boolean> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+			routeData,
+			game,
+		};
+		const invokeRes = (await invoke(
+			"set_custom_car_route",
 			rustParams
 		)) as responseRustTypes;
 
