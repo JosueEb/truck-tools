@@ -1,6 +1,7 @@
 pub mod accessories;
 pub mod car_routes;
 pub mod license_plate;
+pub mod license_plate_ats;
 pub mod profiles;
 pub mod routes;
 pub mod trailers;

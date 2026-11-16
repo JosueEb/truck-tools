@@ -29,6 +29,11 @@ use main_options::routes::{cancel_current_job as cancel_job_backend, get_route_c
 use structs::vec_routes::{CustomRoutePayload, SaveRouteDataResponse};
 use main_options::car_routes::{get_save_car_route_data as get_car_route_data_backend, set_custom_car_route as set_car_route_backend};
 use structs::vec_car_routes::{CarRoutePayload, SaveCarRouteDataResponse};
+use main_options::license_plate_ats::{
+    get_current_plates_ats, get_license_plates_catalog_ats, set_license_plate_ats as set_license_plate_ats_backend,
+    PlateTarget,
+};
+use structs::vec_license_plate_ats::AtsCurrentPlatesResponse;
 use structs::bus_experience_skills::BusExperienceSkills;
 use structs::experience_skills::ExperienceSkills;
 use structs::responses::{
@@ -1236,6 +1241,48 @@ async fn set_custom_car_route(
 }
 
 #[tauri::command]
+fn get_license_plates_ats() -> Result<Option<serde_json::Value>, ()> {
+    return Ok(get_license_plates_catalog_ats());
+}
+
+#[tauri::command]
+async fn get_current_license_plates_ats(dir_save: &str) -> Result<AtsCurrentPlatesResponse, ()> {
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(AtsCurrentPlatesResponse::failed()),
+    };
+
+    return Ok(get_current_plates_ats(&file));
+}
+
+#[tauri::command]
+async fn set_license_plate_ats(
+    dir_save: &str,
+    target: &str,
+    state: &str,
+    design_id: &str,
+    text: &str,
+) -> Result<DefaultResponse, ()> {
+    let target = match PlateTarget::parse(target) {
+        Some(target) => target,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let file: Vec<String> = match read_file_text(dir_save).await {
+        Some(file) => file,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let modified_file = match set_license_plate_ats_backend(&file, target, state, design_id, text) {
+        Some(modified) => modified,
+        None => return Ok(DefaultResponse { res: false }),
+    };
+
+    let res = save_file(dir_save.to_string(), modified_file).await;
+    return Ok(DefaultResponse { res });
+}
+
+#[tauri::command]
 async fn cancel_current_job(dir_save: &str) -> Result<DefaultResponse, ()> {
     let file: Vec<String> = match read_file_text(dir_save).await {
         Some(file) => file,
@@ -1311,6 +1358,9 @@ pub fn run() {
             cancel_current_job,
             get_save_car_route_data,
             set_custom_car_route,
+            get_license_plates_ats,
+            get_current_license_plates_ats,
+            set_license_plate_ats,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

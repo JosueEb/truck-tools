@@ -35,6 +35,9 @@ import {
 	CustomRoutePayload,
 	ResponseSaveCarRouteData,
 	CarRoutePayload,
+	AtsPlateCatalog,
+	AtsPlateTarget,
+	ResponseAtsCurrentPlates,
 } from "@/types/fileEditTypes";
 import {
 	IColorRgbToValidate,
@@ -1102,6 +1105,62 @@ export const setCustomCarRoute = async (
 		};
 		const invokeRes = (await invoke(
 			"set_custom_car_route",
+			rustParams
+		)) as responseRustTypes;
+
+		return invokeRes.res;
+	} catch {
+		return false;
+	}
+};
+
+let atsPlateCatalog: Promise<AtsPlateCatalog | null> | null = null;
+
+export const getLicensePlatesAts = (): Promise<AtsPlateCatalog | null> => {
+	if (!atsPlateCatalog) {
+		atsPlateCatalog = (
+			invoke("get_license_plates_ats") as Promise<AtsPlateCatalog | null>
+		).catch(() => {
+			atsPlateCatalog = null;
+			return null;
+		});
+	}
+	return atsPlateCatalog;
+};
+
+export const getCurrentLicensePlatesAts = async (
+	dirSave: string
+): Promise<ResponseAtsCurrentPlates | null> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+		};
+		return (await invoke(
+			"get_current_license_plates_ats",
+			rustParams
+		)) as ResponseAtsCurrentPlates;
+	} catch {
+		return null;
+	}
+};
+
+export const setLicensePlateAts = async (
+	dirSave: string,
+	target: AtsPlateTarget,
+	state: string,
+	designId: string,
+	text: string
+): Promise<boolean> => {
+	try {
+		const rustParams = {
+			dirSave: dirSave + "/game.sii",
+			target,
+			state,
+			designId,
+			text,
+		};
+		const invokeRes = (await invoke(
+			"set_license_plate_ats",
 			rustParams
 		)) as responseRustTypes;
 

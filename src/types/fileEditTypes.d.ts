@@ -219,3 +219,59 @@ export interface CustomRoutePayload {
 	start_mode?: RouteStartMode;
 	game?: string;
 }
+
+export type AtsPlateTarget = "truck" | "trailer" | "car";
+
+/** atlasX, atlasY, width, height, planeX, planeY, advance, image */
+export type AtsPlateGlyph = [
+	number,
+	number,
+	number,
+	number,
+	number,
+	number,
+	number,
+	number,
+];
+
+export interface AtsPlateFont {
+	images: { file: string; scaleX: number; scaleY: number; padding: number }[];
+	vertSpan: number;
+	glyphs: Record<string, AtsPlateGlyph>;
+}
+
+export interface AtsPlateDesign {
+	id: string;
+	type: string;
+	template: string;
+	backgroundFront: string | null;
+	backgroundRear: string | null;
+	prefix: string;
+	suffix: string;
+	/** Options of each text position; literal characters have a single option */
+	slots: string[][];
+}
+
+export interface AtsPlateState {
+	name: string;
+	code: string;
+	chars: string;
+	designs: AtsPlateDesign[];
+	font: AtsPlateFont;
+}
+
+export interface AtsPlateCatalog {
+	states: Record<string, AtsPlateState>;
+}
+
+export interface AtsCurrentPlate {
+	text: string;
+	state: string;
+}
+
+export interface ResponseAtsCurrentPlates {
+	res: boolean;
+	truck: AtsCurrentPlate | null;
+	trailer: AtsCurrentPlate | null;
+	car: AtsCurrentPlate | null;
+}

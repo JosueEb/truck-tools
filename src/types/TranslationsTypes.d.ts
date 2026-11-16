@@ -663,6 +663,7 @@ export interface Trucks {
 	fill_fuel: FillFuel;
 	custom_fuel: CustomFuel;
 	license_plate: TrucksLicensePlate;
+	license_plate_ats: TrucksLicensePlateAts;
 	repair_all_trucks: RepairAllTrucks;
 	repair_truck: RepairTruck;
 	change_km: ChangeKM;
@@ -776,6 +777,35 @@ export interface TrucksLicensePlate {
 	description_card: string;
 	label_card: string;
 	modal: LicensePlateModal;
+}
+
+export interface TrucksLicensePlateAts {
+	description_card: string;
+	label_card: string;
+	modal: LicensePlateAtsModal;
+}
+
+export interface LicensePlateAtsModal {
+	btn_apply: string;
+	btn_close: string;
+	btn_open: string;
+	btn_random: string;
+	current_plate: string;
+	description: string;
+	input_design: Input;
+	input_state: Input;
+	input_text: Input;
+	load_error: string;
+	loading: string;
+	no_vehicle: { car: string; trailer: string; truck: string };
+	plate_types: Record<string, string>;
+	preview_front: string;
+	preview_note: string;
+	preview_rear: string;
+	target_label: string;
+	targets: { car: string; trailer: string; truck: string };
+	text_help: string;
+	title: string;
 }
 
 export interface RepairAllTrucks {

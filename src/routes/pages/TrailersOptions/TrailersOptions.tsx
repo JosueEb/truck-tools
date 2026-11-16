@@ -22,12 +22,14 @@ import img4_ats from "@/static/img/ats/OptionsImages/4.webp";
 import img5_ats from "@/static/img/ats/OptionsImages/5.webp";
 import img17_ats from "@/static/img/ats/OptionsImages/17.webp";
 import img20_ats from "@/static/img/ats/OptionsImages/20.webp";
+import img22_ats from "@/static/img/ats/OptionsImages/22.webp";
 
 // modals
 import ModifyWeight from "@/routes/pages/TrailersOptions/Modals/ModifyWeight";
 import UnlockTrailers from "@/routes/pages/TrailersOptions/Modals/UnlockTrailers";
 import ModifyTrailerWeight from "@/routes/pages/TrailersOptions/Modals/ModifyTrailerWeight";
 import EditLicensePlate from "@/routes/pages/TrailersOptions/Modals/EditLicensePlate";
+import EditLicensePlateAts from "@/routes/pages/TrucksOptions/Modals/EditLicensePlateAts";
 import RepairTrailers from "@/routes/pages/TrailersOptions/Modals/RepairTrailer";
 import RepairAllTrailers from "@/routes/pages/TrailersOptions/Modals/RepairAllTrailers";
 import SetPlayerTrailer from "@/routes/pages/TrailersOptions/Modals/SetPlayerTrailer";
@@ -35,7 +37,7 @@ import SetPlayerTrailer from "@/routes/pages/TrailersOptions/Modals/SetPlayerTra
 const TrailersOptions = () => {
 	const { game } = useContext(ProfileContex);
 	const { translations } = useContext(LocaleContext);
-	const { trailers } = translations.menu_options;
+	const { trailers, trucks } = translations.menu_options;
 
 	const items = [
 		{
@@ -45,6 +47,14 @@ const TrailersOptions = () => {
 			image: img2,
 			modal: <EditLicensePlate />,
 			disable: game === "ets2" ? false : true,
+		},
+		{
+			id: "ats_license_plate",
+			title: trucks.license_plate_ats.label_card,
+			description: trucks.license_plate_ats.description_card,
+			image: img22_ats,
+			modal: <EditLicensePlateAts defaultTarget="trailer" />,
+			disable: game !== "ats",
 		},
 		{
 			id: "2",

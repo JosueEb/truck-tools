@@ -655,6 +655,56 @@
 					"title": "Change truck license plate"
 				}
 			},
+			"license_plate_ats": {
+				"description_card": "Put a plate from any state on your truck, trailer or car",
+				"label_card": "State license plates",
+				"modal": {
+					"btn_apply": "Apply",
+					"btn_close": "Close",
+					"btn_open": "Open",
+					"btn_random": "Random number",
+					"current_plate": "Current plate: {plate}",
+					"description": "Choose a state and one of its plate designs. The plate is saved with the same design the game uses for that state.",
+					"input_design": {
+						"label": "Plate design",
+						"placeholder": "Select a design"
+					},
+					"input_state": {
+						"label": "State",
+						"placeholder": "Select a state"
+					},
+					"input_text": {
+						"label": "Plate text",
+						"placeholder": "Enter text"
+					},
+					"load_error": "Could not read the plates of this save",
+					"loading": "Loading plates...",
+					"no_vehicle": {
+						"car": "This save has no car",
+						"trailer": "This save has no trailer",
+						"truck": "This save has no truck"
+					},
+					"plate_types": {
+						"bus": "Bus",
+						"car": "Car",
+						"rigid": "Rigid truck",
+						"trailer": "Trailer",
+						"truck": "Truck",
+						"truck_city": "City truck"
+					},
+					"preview_front": "Front",
+					"preview_note": "Preview with the state's real background and font; in game the text may sit slightly differently.",
+					"preview_rear": "Rear",
+					"target_label": "Vehicle",
+					"targets": {
+						"car": "Car",
+						"trailer": "Trailer",
+						"truck": "Truck"
+					},
+					"text_help": "Pattern of this design: {pattern}. Allowed: letters, numbers, spaces and dashes.",
+					"title": "State license plates"
+				}
+			},
 			"repair_all_trucks": {
 				"description_card": "Repairs all fleet trucks",
 				"label_card": "Repair all trucks",

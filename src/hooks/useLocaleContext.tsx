@@ -11,37 +11,37 @@ import {
 	Langs as LangsTypes,
 } from "@/types/TranslationsTypes";
 
+type TranslationTree = { [key: string]: string | TranslationTree };
+
+/** Locale strings over the English ones, so untranslated keys show in English */
+const withEnglishFallback = (
+	english: TranslationTree,
+	locale: TranslationTree | undefined
+): TranslationTree => {
+	const result: TranslationTree = { ...english };
+	for (const [key, value] of Object.entries(locale ?? {})) {
+		const base = english[key];
+		if (typeof value === "string") {
+			if (value !== "" || base === undefined) result[key] = value;
+		} else if (value && typeof base === "object") {
+			result[key] = withEnglishFallback(base, value);
+		} else if (value) {
+			result[key] = value;
+		}
+	}
+	return result;
+};
+
 const getLang = async (lang: LangsTypes): Promise<TranslationsTypes> => {
-	const res_lags = (await import(
-		`@/translations/${lang}.json`
-	)) as TranslationsTypes;
+	const res_lags = (await import(`@/translations/${lang}.json`)).default;
+	const english = (await import("@/translations/en-US.json")).default;
+	if (lang === "en-US") return english as TranslationsTypes;
 
-	// New sections fall back to English until they are translated in Weblate
-	if (
-		res_lags.menu_options.routes?.create_car_route &&
-		res_lags.menu_options.profile.bus_skills
-	)
-		return res_lags;
-
-	const english =
-		(await import("@/translations/en-US.json")) as TranslationsTypes;
-
-	return {
-		...res_lags,
-		menu_options: {
-			...res_lags.menu_options,
-			routes: {
-				...english.menu_options.routes,
-				...res_lags.menu_options.routes,
-			},
-			profile: {
-				...res_lags.menu_options.profile,
-				bus_skills:
-					res_lags.menu_options.profile.bus_skills ??
-					english.menu_options.profile.bus_skills,
-			},
-		},
-	};
+	// Sections Weblate has not translated yet fall back to English
+	return withEnglishFallback(
+		english as unknown as TranslationTree,
+		res_lags as TranslationTree
+	) as unknown as TranslationsTypes;
 };
 
 // eslint-disable-next-line react-refresh/only-export-components

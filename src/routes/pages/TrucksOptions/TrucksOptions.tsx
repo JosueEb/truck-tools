@@ -10,6 +10,7 @@ import FillTruckFuel from "@/routes/pages/TrucksOptions/Modals/FillTruckFuel";
 import SetInfiniteFuel from "@/routes/pages/TrucksOptions/Modals/SetInfiniteFuel";
 import FillAllTrucksFuel from "@/routes/pages/TrucksOptions/Modals/FillAllTrucksFuel";
 import EditLicensePlate from "@/routes/pages/TrucksOptions/Modals/EditLicensePlate";
+import EditLicensePlateAts from "@/routes/pages/TrucksOptions/Modals/EditLicensePlateAts";
 import SetTruckEngine from "@/routes/pages/TrucksOptions/Modals/SetTruckEngine";
 import ModifyKm from "@/routes/pages/TrucksOptions/Modals/ModifyKm";
 import SetTruckTransmission from "@/routes/pages/TrucksOptions/Modals/SetTruckTransmission";
@@ -41,6 +42,7 @@ import img10_ats from "@/static/img/ats/OptionsImages/10.webp";
 import img18_ats from "@/static/img/ats/OptionsImages/18.webp";
 import img19_ats from "@/static/img/ats/OptionsImages/19.webp";
 import img21_ats from "@/static/img/ats/OptionsImages/21.webp";
+import img22_ats from "@/static/img/ats/OptionsImages/22.webp";
 
 const TrucksOptions = () => {
 	const { game } = useContext(ProfileContex);
@@ -87,6 +89,14 @@ const TrucksOptions = () => {
 			image: img1,
 			modal: <EditLicensePlate />,
 			disable: game === "ets2" ? false : true,
+		},
+		{
+			id: "ats_license_plate",
+			title: trucks.license_plate_ats.label_card,
+			description: trucks.license_plate_ats.description_card,
+			image: img22_ats,
+			modal: <EditLicensePlateAts defaultTarget="truck" />,
+			disable: game !== "ats",
 		},
 		{
 			id: "6",
